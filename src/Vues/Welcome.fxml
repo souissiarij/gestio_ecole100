@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleurs.WelcomeController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controlleurs.WelcomeController" prefHeight="400.0" prefWidth="600.0">
     <children>
-        <VBox alignment="CENTER" spacing="20.0" layoutX="150.0" layoutY="100.0">
-            <Label text="Welcome to the Application!">
-                <font>
-                    <Font name="Arial Bold" size="24.0"/>
-                </font>
-            </Label>
-            <Button text="Get Started" fx:id="startButton" />
+        <!-- Image de fond -->
+        <ImageView fitWidth="600.0" fitHeight="400.0" preserveRatio="false" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0">
+            <image>
+                <Image url="@../images/welcome.jpg"/>
+            </image>
+        </ImageView>
+
+        <!-- Contenu au-dessus de l'image -->
+        <VBox alignment="CENTER" spacing="20" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+            <!-- Texte Bienvenue -->
+            <Text text="Bienvenue" style="-fx-font-family: 'Arial Bold'; -fx-font-size: 36px; -fx-fill: linear-gradient(from 0% 0% to 100% 100%, white, lightblue);"/>
+            
+            <!-- Bouton Entrer -->
+            <Button text="Entrer" fx:id="btnEnter" onAction="#goToAdmin" style="-fx-font-size: 16px; -fx-padding: 10px 20px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 10;"/>
         </VBox>
     </children>
 </AnchorPane>
