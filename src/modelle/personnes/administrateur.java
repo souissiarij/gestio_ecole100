@@ -92,30 +92,35 @@ public class administrateur {
     }
 
      public void afficherProfsParMatiere(int idMatiere) {
-    // Vérifier si la liste des professeurs est vide
-    if (this.listeProfesseurs.isEmpty()) {
-        System.out.println("Aucun professeur enregistré.");
-        return;
-    }
-
-    boolean profTrouve = false;
-
-    // Parcourir la liste des professeurs
-    for (Enseignant enseignant : this.listeProfesseurs) {
-        // Parcourir la liste des matières de chaque professeur
-        for (matiere mat : enseignant.getlistematiere()) {
-            if (mat.getIdMatiere() == idMatiere) { // Comparer les IDs des matières
-                System.out.println("Professeur : " + enseignant.getNom());
-                profTrouve = true;
-                break; // Passer au prochain enseignant
+        try {
+            // Vérifier si la liste des professeurs est vide
+            if (this.listeProfesseurs.isEmpty()) {
+                throw new MatiereNonTrouveeException("La liste des professeurs est vide. Impossible de chercher des matières.");
             }
+
+            boolean profTrouve = false;
+
+            // Parcourir la liste des professeurs
+            for (Enseignant enseignant : this.listeProfesseurs) {
+                // Parcourir la liste des matières de chaque professeur
+                for (matiere mat : enseignant.getlistematiere()) {
+                    if (mat.getIdMatiere() == idMatiere) { // Comparer les IDs des matières
+                        System.out.println("Professeur : " + enseignant.getNom());
+                        profTrouve = true;
+                        break; // Passer au prochain enseignant
+                    }
+                }
+            }
+
+            // Si aucun professeur n'enseigne cette matière, lever une exception
+            if (!profTrouve) {
+                throw new MatiereNonTrouveeException("Aucun professeur n'enseigne la matière avec l'ID " + idMatiere + ".");
+            }
+        } catch (MatiereNonTrouveeException e) {
+            System.err.println("Erreur : " + e.getMessage());
         }
     }
 
-    if (!profTrouve) {
-        System.out.println("Aucun professeur n'enseigne cette matière.");
-    }
-}
 public void afficherEtudiantsAvecAbsences(int n) {
         ArrayList<Absence> s = new ArrayList <Absence>();
     // Vérifier si la liste des étudiants est vide
@@ -140,6 +145,28 @@ public void afficherEtudiantsAvecAbsences(int n) {
 
     if (!etudiantTrouve) {
         System.out.println("Aucun étudiant n'a plus de " + n + " absences.");
+    }
+}
+public void afficherMatieresAvecPlusDeNProfs(int n) {
+    // Vérifier si la liste des matières est vide
+    if (this.listeMatieres.isEmpty()) {
+        System.out.println("Aucune matière enregistrée.");
+        return;
+    }
+
+    boolean matiereTrouvee = false;
+
+    // Parcourir la liste des matières
+    for (matiere mat : this.listeMatieres) {
+        // Vérifier le nombre de professeurs associés à la matière
+        if (mat.getEnseignants().size() > n) {
+            System.out.println("Matière : " + mat.getTitreMatiere() + " (Professeurs : " + mat.getEnseignants().size() + ")");
+            matiereTrouvee = true;
+        }
+    }
+
+    if (!matiereTrouvee) {
+        System.out.println("Aucune matière n'est enseignée par plus de " + n + " professeurs.");
     }
 }
 }

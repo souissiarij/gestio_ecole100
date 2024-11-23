@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0"
+            style="-fx-background-image: url('images/welcome.jpg'); 
+                   -fx-background-size: cover; 
+                   -fx-background-position: center;" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="Controlleurs.MatieregestController">
+
+    <!-- Rectangle semi-transparent pour l'effet -->
+    <Pane prefHeight="400.0" prefWidth="600.0"
+          style="-fx-background-color: rgba(255, 255, 255, 0.6);">
+    </Pane>
+
+    <!-- Conteneur des boutons -->
+    <VBox alignment="CENTER" spacing="15" layoutX="50" layoutY="30"
+          prefHeight="300" prefWidth="500">
+        <Label text="MENU MATIÈRE" 
+               style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: black;" 
+               alignment="CENTER"/>
+
+        <!-- Boutons avec largeur fixe -->
+        <Button text="Ajouter une matière" prefWidth="300"/>
+        <Button text="Supprimer une matière" prefWidth="300"/>
+        <Button text="Afficher une matière" prefWidth="300"/>
+        <Button text="Modifier une matière" prefWidth="300"/>
+        <Button text="Afficher la liste des matières" prefWidth="300"/>
+        <Button text="Ajouter un professeur à une matière" prefWidth="300"/>
+        <Button text="Ajouter un cours à une matière" prefWidth="300"/>
+        <Button text="Afficher les matières selon un critère" prefWidth="300"/>
+    </VBox>
+</AnchorPane>
