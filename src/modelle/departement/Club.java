@@ -6,71 +6,69 @@ package modelle.departement;
  */
 import modelle.personnes.Personne;
 import modelle.personnes.Etudiant;
+import modelle.departement.Groupe;
+import java.util.function.Consumer;
+
 
 /**
  *
  * @author souis
  */
 import java.util.ArrayList;
+record Membre(String nom, String prenom) {}
 
-public class Club {
-    private String idClub;
-    private String nomClub;
-    private Personne responsableClub;
-    private ArrayList<Etudiant> membres;
-    private ArrayList<Personne> bureau;
+enum TypeClub {
+    SPORTIF, CULTUREL, SCIENTIFIQUE, ARTISTIQUE;
+}
+
+public class Club extends Groupe {
+    private TypeClub typeClub;
 
     // Constructeur
-    public Club(String idClub, String nomClub, Personne responsableClub) {
-        this.idClub = idClub;
-        this.nomClub = nomClub;
-        this.responsableClub = responsableClub;
-        this.membres = new ArrayList<>();
-        this.bureau = new ArrayList<>();
+    public Club(String nom, TypeClub typeClub) {
+        super(nom);
+        this.typeClub = typeClub;
     }
 
-    // Getters et setters
-    public String getNomClub() {
-        return nomClub;
+    // Implémentation de la méthode abstraite
+    @Override
+    public void ajouterMembre(Membre membre) throws ClubException {
+        if (membres.contains(membre)) {
+            throw new ClubException("Ce membre est déjà dans le club !");
+        }
+        membres.add(membre);
     }
 
-    public Personne getResponsableClub() {
-        return responsableClub;
+    // Méthode avec une lambda pour appliquer une opération sur les membres
+    public void appliquerSurMembres(Consumer<Membre> operation) {
+        for (Membre membre : membres) {
+            operation.accept(membre);
+        }
     }
 
-    public ArrayList<Etudiant> getMembres() {
-        return membres;
-    }
-
-    public ArrayList<Personne> getBureau() {
-        return bureau;
-    }
-
-    public void ajouterMembre(Etudiant etudiant) {
-        membres.add(etudiant);
-    }
-
-    public void supprimerMembre(Etudiant etudiant) {
-        membres.remove(etudiant);
-    }
-
-    public void ajouterBureau(Personne membreBureau) {
-        bureau.add(membreBureau);
-    }
-
-    public void supprimerBureau(Personne membreBureau) {
-        bureau.remove(membreBureau);
-    }
-
+    // Afficher les détails du club
     public void afficherDetailsClub() {
-        System.out.println("Club: " + nomClub + "\nResponsable: " + responsableClub.getNom() + " " + responsableClub.getPrenom());
-        System.out.println("Membres:");
-        for (Etudiant membre : membres) {
-            System.out.println("- " + membre.getNom() + " " + membre.getPrenom());
-        }
-        System.out.println("Bureau:");
-        for (Personne membreBureau : bureau) {
-            System.out.println("- " + membreBureau.getNom() + " " + membreBureau.getPrenom());
-        }
+        System.out.println("Club: " + nom + " (" + typeClub + ")");
+        afficherMembres();
     }
+    
+    public void exempleClub() {
+    try {
+        Club club = new Club("Astronomie", TypeClub.SCIENTIFIQUE);
+
+        // Ajouter des membres
+        club.ajouterMembre(new Membre("Ali", "Ben Ahmed"));
+        club.ajouterMembre(new Membre("Leila", "Slimani"));
+
+        // Utiliser une lambda pour afficher les membres
+        club.appliquerSurMembres(m -> System.out.println("Bienvenue " + m.nom() + " " + m.prenom() + " !"));
+
+        // Afficher les détails du club
+        club.afficherDetailsClub();
+
+    } catch (ClubException e) {
+        System.out.println("Erreur : " + e.getMessage());
+    }
+}
+
 }
