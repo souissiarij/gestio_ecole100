@@ -13,7 +13,6 @@ import modelle.personnes.Enseignant;
 
     import java.util.ArrayList;
 import java.util.List;
-
 public class matiere {
     private static int compteurId = 0;  // Compteur pour générer les IDs
     private int idMatiere;              // ID unique pour chaque matière
@@ -27,10 +26,6 @@ public class matiere {
         this.titreMatiere = titreMatiere;
         this.enseignants = new ArrayList<>(); // Initialisation des listes vides
         this.cours = new ArrayList<>();
-    }
-
-    public matiere(String mathématiques, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     // Getters et Setters
@@ -64,7 +59,25 @@ public class matiere {
         this.cours.add(cours);
     }
 
-    // Méthode toString pour un affichage lisible des informations
+    // Méthode pour appliquer une action sur tous les cours avec une lambda
+    public void appliquerActionSurCours(ActionCours action) {
+        for (cours c : this.cours) {
+            action.appliquer(c); // Appliquer l'action passée en paramètre
+        }
+    }
+
+    // Exemple d'utilisation interne de lambda
+    public void exempleUsage() {
+        System.out.println("Affichage des titres de cours :");
+        appliquerActionSurCours(c -> System.out.println("Titre du cours : " + c.getTitreCours()));
+
+        System.out.println("\nAjout d'un préfixe 'Module - ' aux titres de cours :");
+        appliquerActionSurCours(c -> c.setTitreCours("Module - " + c.getTitreCours()));
+
+        System.out.println("\nCours après modification :");
+        appliquerActionSurCours(c -> System.out.println("Titre modifié : " + c.getTitreCours()));
+    }
+
     @Override
     public String toString() {
         return "Matière ID: " + idMatiere + "\n" +
@@ -73,5 +86,3 @@ public class matiere {
                "Cours: " + cours;
     }
 }
-
-

@@ -4,19 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/Welcome.fxml</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/departement/Evenement.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/admin.fxml</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/Bibliotheque/Bibliotheque.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/departement/MembreNonTrouveException.java</file>
             <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/gestioEcole100/GestioEcole100.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Controlleurs/WelcomeController.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/Bibliotheque/GestionnaireLivre.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/images/welcome.jpg</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/departement/TypeActivite.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Controlleurs/MatieregestController.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Controlleurs/AdminController.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/departement/Club.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/matieregest.fxml</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/departement/Groupe.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/departement/GestionMembre.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/Bibliotheque/Bibliotheque.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/departement/ClubException.java</file>
         </group>
     </open-files>
 </project-private>

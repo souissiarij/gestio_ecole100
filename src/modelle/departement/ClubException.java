@@ -8,6 +8,8 @@ package modelle.departement;
  *
  * @author user
  */
-public class MembreNonTrouveException {
-    
+class ClubException extends Exception {
+    public ClubException(String message) {
+        super(message);
+    }
 }
