@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableCell?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleurs.EmploiDuTempsController">
+    <VBox alignment="CENTER" spacing="20" style="-fx-background-color: rgba(255, 255, 255, 0.6); -fx-padding: 20;">
+        <Text text="Ajouter un Emploi du Temps" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+        <!-- Formulaire d'ajout -->
+        <TextField fx:id="idField" promptText="ID de l'Emploi du Temps" style="-fx-pref-width: 200;"/>
+        <TextField fx:id="niveauScolaireField" promptText="Niveau Scolaire" style="-fx-pref-width: 200;"/>
+
+        <!-- Créneaux -->
+        <TextField fx:id="jourField" promptText="Jour" style="-fx-pref-width: 200;"/>
+        <TextField fx:id="heureDebutField" promptText="Heure de début" style="-fx-pref-width: 200;"/>
+        <TextField fx:id="heureFinField" promptText="Heure de fin" style="-fx-pref-width: 200;"/>
+        <TextField fx:id="matiereField" promptText="Matière" style="-fx-pref-width: 200;"/>
+        <TextField fx:id="enseignantField" promptText="Enseignant" style="-fx-pref-width: 200;"/>
+
+        <!-- Bouton pour enregistrer l'emploi du temps -->
+        <Button text="Ajouter" onAction="#ajouterEmploi" style="-fx-pref-width: 150;"/>
+                <Button text="Afficher" onAction="#afficherEmploi" style="-fx-pref-width: 150;"/>
+<Button text="Masquer" onAction="#masquerEmploi" style="-fx-pref-width: 150;"/>
+
+
+        <!-- TableView pour afficher les emplois du temps -->
+        <TableView fx:id="tableView" visible="false" style="-fx-pref-width: 600;">
+            <columns>
+                <TableColumn text="ID" fx:id="idColumn"/>
+                <TableColumn text="Niveau Scolaire" fx:id="niveauScolaireColumn"/>
+                <TableColumn text="Jour" fx:id="jourColumn"/>
+                <TableColumn text="Heure Début" fx:id="heureDebutColumn"/>
+                <TableColumn text="Heure Fin" fx:id="heureFinColumn"/>
+                <TableColumn text="Matière" fx:id="matiereColumn"/>
+                <TableColumn text="Enseignant" fx:id="enseignantColumn"/>
+
+            </columns>
+        </TableView>
+    </VBox>
+</StackPane>

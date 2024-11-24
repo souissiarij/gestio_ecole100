@@ -76,12 +76,41 @@ private void handleMatiere(ActionEvent event) {
 
     @FXML
     private void handleEmploi(ActionEvent event) {
-        afficherMessage("Emploi");
-    }
+     try {
+        // Charger le fichier FXML de Matieregest
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vues/Emploi.fxml"));
+        Parent matiereView = loader.load();
+        
+        // Obtenir la scène actuelle
+        Scene currentScene = ((Node) event.getSource()).getScene();
+        Stage stage = (Stage) currentScene.getWindow();
+        
+        // Mettre à jour la scène avec la nouvelle vue
+        stage.setScene(new Scene(matiereView));
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+        afficherMessage("Erreur : Impossible de charger l'interface Emploi.");
+    }    }
 
     @FXML
     private void handleClub(ActionEvent event) {
-        afficherMessage("Club");
+             try {
+        // Charger le fichier FXML de Matieregest
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vues/club.fxml"));
+        Parent matiereView = loader.load();
+        
+        // Obtenir la scène actuelle
+        Scene currentScene = ((Node) event.getSource()).getScene();
+        Stage stage = (Stage) currentScene.getWindow();
+        
+        // Mettre à jour la scène avec la nouvelle vue
+        stage.setScene(new Scene(matiereView));
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+        afficherMessage("Erreur : Impossible de charger l'interface club.");
+    }  
     }
 
     private void afficherMessage(String message) {

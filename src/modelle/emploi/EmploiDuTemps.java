@@ -1,66 +1,73 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelle.emploi;
-
-import java.util.ArrayList;
-
+/*
 public class EmploiDuTemps {
-    private String id; // Identifiant unique de l'emploi du temps
-    private String niveauScolaire; // Niveau scolaire associé à l'emploi du temps
-    private ArrayList<Creneau> listeCreneaux; // Liste des créneaux horaires
+    private String id;
+    private String niveauScolaire;
+    private Creneau creneau;
 
-    // Constructeur
     public EmploiDuTemps(String id, String niveauScolaire) {
         this.id = id;
         this.niveauScolaire = niveauScolaire;
-        this.listeCreneaux = new ArrayList<>(); // Initialisation de la liste des créneaux
     }
 
-    // Getters et setters
+    public void ajouterCreneau(Creneau creneau) {
+        this.creneau = creneau;
+    }
+
+    // Getters
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getNiveauScolaire() {
         return niveauScolaire;
     }
 
-    public void setNiveauScolaire(String niveauScolaire) {
+    public String getJour() {
+        return creneau != null ? creneau.getJour() : "";
+    }
+
+    public String getHeureDebut() {
+        return creneau != null ? creneau.getHeureDebut() : "";
+    }
+
+    public String getHeureFin() {
+        return creneau != null ? creneau.getHeureFin() : "";
+    }
+
+    public String getMatiere() {
+        return creneau != null ? creneau.getMatiere() : "";
+    }
+
+    public String getEnseignant() {
+        return creneau != null ? creneau.getEnseignant() : "";
+    }
+}
+*/
+public class EmploiDuTemps {
+    private String id;
+    private String niveauScolaire;
+    private String jour;
+    private String heureDebut;
+    private String heureFin;
+    private String matiere;
+    private String enseignant;
+
+    public EmploiDuTemps(String id, String niveauScolaire, String jour, String heureDebut, String heureFin, String matiere, String enseignant) {
+        this.id = id;
         this.niveauScolaire = niveauScolaire;
+        this.jour = jour;
+        this.heureDebut = heureDebut;
+        this.heureFin = heureFin;
+        this.matiere = matiere;
+        this.enseignant = enseignant;
     }
 
-    public ArrayList<Creneau> getListeCreneaux() {
-        return listeCreneaux;
-    }
-
-    // Méthodes pour gérer les créneaux
-    public void ajouterCreneau(Creneau creneau) {
-        listeCreneaux.add(creneau);
-    }
-
-    public void supprimerCreneau(Creneau creneau) {
-        listeCreneaux.remove(creneau);
-    }
-
-    public void afficherEmploiDuTemps() {
-        System.out.println("Emploi du temps pour le niveau : " + niveauScolaire);
-        for (Creneau creneau : listeCreneaux) {
-            System.out.println(creneau);
-        }
-    }
-
-    @Override
-    public String toString() {
-        return "EmploiDuTemps {" +
-                "id='" + id + '\'' +
-                ", niveauScolaire='" + niveauScolaire + '\'' +
-                ", listeCreneaux=" + listeCreneaux +
-                '}';
-    }
+    public String getId() { return id; }
+    public String getNiveauScolaire() { return niveauScolaire; }
+    public String getJour() { return jour; }
+    public String getHeureDebut() { return heureDebut; }
+    public String getHeureFin() { return heureFin; }
+    public String getMatiere() { return matiere; }
+    public String getEnseignant() { return enseignant; }
 }

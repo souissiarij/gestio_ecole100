@@ -27,5 +27,8 @@
         <Button text="Évaluation" onAction="#handleEvaluation" style="-fx-pref-width: 150;"/>
         <Button text="Emploi" onAction="#handleEmploi" style="-fx-pref-width: 150;"/>
         <Button text="Club" onAction="#handleClub" style="-fx-pref-width: 150;"/>
-    </VBox>
+        
+            </VBox>
+
+       
 </StackPane>

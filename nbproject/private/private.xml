@@ -3,12 +3,33 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/Welcome.fxml</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/gestioEcole100/GestioEcole100.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/departement/Groupe.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/departement/GestionMembre.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/Bibliotheque/Bibliotheque.java</file>
-            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/departement/ClubException.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/modelle/departement/ClubException.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/gestioEcole100/GestioEcole100.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/modelle/departement/Club.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Vues/AfficherEmploi.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Vues/Welcome.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Controlleurs/AjouterEmploiController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Vues/Emploi.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Vues/admin.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/modelle/departement/GestionMembre.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Vues/matieregest.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Controlleurs/MatieregestController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Controlleurs/AfficherEmploiController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/modelle/emploi/Creneau.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/modelle/departement/Membre.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Controlleurs/WelcomeController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/modelle/departement/TypeClub.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Controlleurs/AdminController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Controlleurs/ClubController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Vues/AjouterEmploi.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/images/club.jpg</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/modelle/departement/Groupe.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Vues/Club.fxml</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/modelle/matiere/matiere.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/modelle/departement/Evenement.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/modelle/emploi/EmploiDuTemps.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/Controlleurs/EmploiDuTempsController.java</file>
+            <file>file:/C:/Users/user/Documents/NetBeansProjects/gestiondecole/src/images/welcome.jpg</file>
         </group>
     </open-files>
 </project-private>
