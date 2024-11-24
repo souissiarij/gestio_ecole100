@@ -59,11 +59,7 @@ public class administrateur {
     public void setListeMatieres(ArrayList<matiere> listeMatieres) {
         this.listeMatieres = listeMatieres;
     }
-
     
-
-   
-
     public ArrayList<certificat> getListeCertificats() {
         return listeCertificats;
     }

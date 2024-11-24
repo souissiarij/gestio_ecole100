@@ -1,0 +1,21 @@
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="Controlleurs.CertificatFormController">
+    <children>
+        <VBox spacing="10" alignment="CENTER" prefWidth="400" prefHeight="300">
+            <Label text="Créer un nouveau certificat" />
+            <TextField fx:id="idCertificatField" promptText="ID Certificat" />
+            <TextField fx:id="nomCertificatField" promptText="Nom Certificat" />
+            <DatePicker fx:id="dateEmissionPicker" promptText="Date d'Émission" />
+            <DatePicker fx:id="dateExpirationPicker" promptText="Date d'Expiration" />
+            <Button text="Enregistrer" onAction="#enregistrerCertificat" />
+            <Button text="Annuler" onAction="#annuler" />
+        </VBox>
+    </children>
+</AnchorPane>
+

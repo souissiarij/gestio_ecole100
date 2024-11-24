@@ -24,6 +24,9 @@ public class Enseignant extends Personne {
         this.listeMatieresEnseignes = new ArrayList<>(); // Initialisation de la liste
     }
 
+ 
+    
+
     // Getter et setter pour la spécialité
     public String getSpecialite() {
         return specialite;

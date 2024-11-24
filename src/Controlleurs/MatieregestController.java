@@ -4,9 +4,8 @@
  */
 package Controlleurs;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import java.io.IOException;
+
 
 /**
  * FXML Controller class
@@ -17,14 +16,37 @@ import javafx.fxml.Initializable;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class MatieregestController {
 
     @FXML
-    private void ajouterMatiere(ActionEvent event) {
-        System.out.println("Ajouter une matière");
-        // Implémentez la logique pour ajouter une matière ici
-    }
+   
+private void ajouterMatiere(ActionEvent event) {
+    try {
+        // Charger le fichier FXML de la nouvelle interface
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vues/ajoutermatiere.fxml"));
+        Parent root = loader.load();
+
+        // Obtenir la scène actuelle et la remplacer par la nouvelle interface
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        // Facultatif : mettre à jour le titre de la fenêtre
+        stage.setTitle("Ajouter une Matière");
+
+        // Afficher la nouvelle interface
+        stage.show();
+    } catch (IOException e) {
+        System.err.println("Erreur lors du chargement de l'interface Ajouter Matière : " + e.getMessage());
+        e.printStackTrace();
+    }}
+
 
     @FXML
     private void supprimerMatiere(ActionEvent event) {
