@@ -4,24 +4,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0"
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0"
             style="-fx-background-image: url('images/welcome.jpg'); 
                    -fx-background-size: cover; 
                    -fx-background-position: center;" 
-           
             xmlns:fx="http://javafx.com/fxml/1" 
             fx:controller="Controlleurs.CerificatgestController">
 
     <children>
-        <!-- Rectangle semi-transparent en arrière-plan -->
-        <Pane prefHeight="400.0" prefWidth="900.0"
+        <!-- Rectangle semi-transparent couvrant toute la page -->
+        <Pane prefHeight="Infinity" prefWidth="Infinity" 
               style="-fx-background-color: rgba(255, 255, 255, 0.6);"
-              mouseTransparent="true">
-        </Pane>
-
-        <!-- Conteneur principal pour les boutons et le tableau -->
-        <VBox alignment="CENTER" spacing="15" layoutX="50" layoutY="30"
-              prefHeight="300" prefWidth="500">
+              mouseTransparent="true"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.topAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" />
+        
+        <!-- Conteneur principal pour les boutons -->
+        <VBox alignment="CENTER" spacing="15" layoutX="150" layoutY="50"
+              prefHeight="400" prefWidth="500">
             
             <!-- Titre -->
             <Label text="MENU CERTIFICAT" 
@@ -32,13 +34,14 @@
             <Button text="Ajouter une certificat" onAction="#ajouterCertificat" prefWidth="300" />
             <Button text="Supprimer une certificat" onAction="#supprimerCertificat" prefWidth="300" />
             <Button text="Modifier une certificat" onAction="#ModifierCertificat" prefWidth="300" />
-            <Button text="Afficher la liste des certificat" onAction="#afficherListeCertifiact" prefWidth="300" />
-            <Button text="Afficher la liste des certificat triée" onAction="#afficherListeCertifiacttriee" prefWidth="300" />
+            <Button text="Afficher la liste des certificats" onAction="#afficherListeCertifiact" prefWidth="300" />
+            <Button text="Afficher la liste des certificats triée" onAction="#afficherListeCertifiacttriee" prefWidth="300" />
+            <Button text="Retour au menu principal " onAction="#handleRetourMenuPrincipal" prefWidth="300" />
         </VBox>
 
         <!-- TableView pour afficher la liste des certificats -->
-        <VBox alignment="TOP_CENTER" spacing="10" layoutX="50" layoutY="350"
-              prefHeight="300" prefWidth="500">
+        <VBox alignment="TOP_CENTER" spacing="10" layoutX="50" layoutY="500"
+              prefHeight="300" prefWidth="700">
             
             <!-- Titre pour le tableau -->
             <Label text="Liste des Certificats" style="-fx-font-size: 18px;" />

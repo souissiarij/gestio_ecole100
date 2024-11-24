@@ -35,5 +35,8 @@
         <Button text="Ajouter un professeur à une matière" prefWidth="300"/>
         <Button text="Ajouter un cours à une matière" prefWidth="300"/>
         <Button text="Afficher les matières selon un critère" prefWidth="300"/>
+        
+        <!-- Bouton "Retour au menu principal" -->
+        <Button text="Retour au menu principal" onAction="#handleRetourMenuPrincipal" prefWidth="300"/>
     </VBox>
 </AnchorPane>

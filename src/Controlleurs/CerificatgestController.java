@@ -134,6 +134,26 @@ private void ajouterCertificat(ActionEvent event) {
         ObservableList<certificat> certificats = FXCollections.observableArrayList(administrateurprincipal.getListeCertificats());
         certificatTable.setItems(certificats);
     }
+    @FXML
+    private void handleRetourMenuPrincipal(ActionEvent event) {
+    try {
+        // Charger le fichier FXML du menu principal
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/vues/admin.fxml"));
+        Parent root = loader.load();
+
+        // Obtenir la scène actuelle et définir le nouveau contenu
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+
+        // Optionnel : définir le titre de la fenêtre
+        stage.setTitle("Menu Principal");
+
+        // Afficher la scène
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace(); // Pour déboguer en cas d'erreur
+    }
+}
 }
 
     
