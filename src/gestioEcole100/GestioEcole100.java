@@ -16,14 +16,25 @@ import javafx.stage.Stage;
  */
 public class GestioEcole100 extends Application {
     
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/Vues/Welcome.fxml"));
-        
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
+
+    @Override
+    public void start(Stage primaryStage) {
+        try {
+            // Charger le fichier FXML de la connexion
+            Parent root = FXMLLoader.load(getClass().getResource("/Vues/login.fxml"));
+            
+            // Créer une scène et appliquer des dimensions à la fenêtre principale
+            Scene scene = new Scene(root, 400, 300);
+            
+            // Configurer la fenêtre principale
+            primaryStage.setTitle("Connexion Administrateur");
+            primaryStage.setScene(scene);
+            primaryStage.show(); // Afficher la fenêtre
+        } catch (Exception e) {
+            e.printStackTrace(); // Afficher l'erreur en cas de problème
+        }
     }
+
 
     /**
      * @param args the command line arguments
