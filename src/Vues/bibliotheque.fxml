@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleurs.bibliothequeController" spacing="20"
+      style="-fx-padding: 20; -fx-background-color: #f9f9f9; -fx-border-color: #dcdcdc; -fx-border-radius: 10; -fx-background-radius: 10;">
+    
+    <!-- Titre principal -->
+    <Text text="Gestion de la Bibliothèque" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #34495e;" />
+
+    <!-- Champs de saisie -->
+    <HBox spacing="15" style="-fx-padding: 10;">
+        <TextField fx:id="idbField" promptText="ID de la Bibliothèque" style="-fx-font-size: 14px; -fx-border-color: #bdc3c7;" />
+        <TextField fx:id="idEField" promptText="ID de l'Étudiant" style="-fx-font-size: 14px; -fx-border-color: #bdc3c7;" />
+    </HBox>
+    <HBox spacing="15" style="-fx-padding: 10;">
+        <TextField fx:id="livresDisponiblesField" promptText="Livres Disponibles" style="-fx-font-size: 14px; -fx-border-color: #bdc3c7;" />
+        <TextField fx:id="empruntsField" promptText="Livre Emprunté par l'Étudiant" style="-fx-font-size: 14px; -fx-border-color: #bdc3c7;" />
+    </HBox>
+
+    <!-- Boutons d'action -->
+    <HBox spacing="20" alignment="center">
+        <Button text="Enregistrer" onAction="#enregistreretudiant"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10; -fx-border-radius: 5; -fx-background-radius: 5;" />
+        <Button text="Retour" onAction="#retour"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10; -fx-border-radius: 5; -fx-background-radius: 5;" />
+    </HBox>
+</VBox>  

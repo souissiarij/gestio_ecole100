@@ -1,45 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controlleurs.WelcomeController" prefHeight="400.0" prefWidth="600.0">
-    <children>
-        <!-- Image de fond -->
-        <ImageView fitWidth="600.0" fitHeight="400.0" preserveRatio="false" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0">
-            <image>
-                <Image url="@../images/welcome.jpg"/>
-            </image>
-        </ImageView>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controlleurs.WelcomeController" prefHeight="600.0" prefWidth="800.0">
+    <!-- Image de fond -->
+    <ImageView fitWidth="2000.0" fitHeight="900.0" preserveRatio="false" 
+               AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" 
+               AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+        <image>
+            <Image url="@../images/welcome.jpg"/>
+        </image>
+    </ImageView>
 
-        <!-- Contenu aligné verticalement à droite -->
-        <VBox alignment="CENTER" spacing="20" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
-            <!-- Texte Bienvenue -->
-            <Text text="Bienvenue" style="
-                    -fx-font-family: 'Arial Bold'; 
-                    -fx-font-size: 36px; 
-                    -fx-fill: linear-gradient(from 0% 0% to 100% 100%, white, lightblue); 
-                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 4, 0.5, 2, 2);"/>
-            
-            <!-- Titre SchoolHub -->
-            <Text text="SchoolHub" style="
-                    -fx-font-family: 'Arial'; 
-                    -fx-font-size: 24px; 
-                    -fx-fill: linear-gradient(from 0% 0% to 100% 100%, lightgray, darkgray); 
-                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 3, 0.3, 1, 1);"/>
-
-            <!-- Bouton Entrer -->
-            <Button text="Entrer" fx:id="btnEnter" onAction="#goToAdmin" style="
-                -fx-font-size: 18px; 
-                -fx-padding: 12px 30px; 
-                -fx-background-color: linear-gradient(to bottom, #8bc34a, #689f38);
-                -fx-text-fill: white; 
-                -fx-background-radius: 15; 
-                -fx-border-color: #558b2f; 
-                -fx-border-width: 2; 
-                -fx-border-radius: 15;"/>
-        </VBox>
-    </children>
+    <!-- Contenu par-dessus l'image -->
+  <VBox alignment="CENTER" spacing="20" style="-fx-background-color: rgba(255, 255, 255, 0.7); -fx-background-radius: 10; -fx-padding: 20;" 
+          AnchorPane.topAnchor="100.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" prefWidth="600.0">
+        <Text text="Bienvenue" style="
+                -fx-font-family: 'Arial Bold'; 
+                -fx-font-size: 36px; 
+                -fx-fill: linear-gradient(from 0% 0% to 100% 100%, white, lightblue); 
+                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 4, 0.5, 2, 2);"/>
+        <Text text="SchoolHub" style="
+                -fx-font-family: 'Arial'; 
+                -fx-font-size: 24px; 
+                -fx-fill: linear-gradient(from 0% 0% to 100% 100%, lightgray, darkgray); 
+                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 3, 0.3, 1, 1);"/>
+        <Button text="Entrer" fx:id="btnEnter" onAction="#goToAdmin" style="
+            -fx-font-size: 18px; 
+            -fx-padding: 12px 30px; 
+            -fx-background-color: linear-gradient(to bottom, #8bc34a, #689f38);
+            -fx-text-fill: white; 
+            -fx-background-radius: 15; 
+            -fx-border-color: #558b2f; 
+            -fx-border-width: 2; 
+            -fx-border-radius: 15;"/>
+    </VBox>
 </AnchorPane>

@@ -4,6 +4,8 @@
  */
 package modelle.personnes;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 /**
  *
  * @author souis
@@ -36,7 +38,9 @@ public class Personne {
     public String getId() {
         return id;
     }
-
+  public StringProperty idProperty() {
+        return new SimpleStringProperty(getId());
+    }
     public void setNom(String nom) {
         this.nom = nom;
     }

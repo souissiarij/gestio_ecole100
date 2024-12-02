@@ -1,65 +1,77 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelle.departement;
-import modelle.personnes.Etudiant ;
-import java.util.ArrayList ;
 
-/**
- *
- * @author user
- */
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import modelle.personnes.Etudiant;
+
+import java.util.ArrayList;
 public class Cantine {
-     private String idCantine;
-    private String nom;
-    private ArrayList<String> menu; // Liste des plats disponibles
-    private ArrayList<Etudiant> listeEtudiantsInscrits;
+     private String id;
+    private String nomm;
+    private String prenom;
+    private String email;
+        private String niveauEtudes;
 
-    // Constructeur
-    public Cantine(String idCantine, String nom) {
-        this.idCantine = idCantine;
-        this.nom = nom;
-        this.menu = new ArrayList<>();
-        this.listeEtudiantsInscrits = new ArrayList<>();
+    private String plat ; 
+
+    public Cantine(String id, String nomm, String prenom, String email, String niveauEtudes, String plat) {
+        this.id = id;
+        this.nomm = nomm;
+        this.prenom = prenom;
+        this.email = email;
+        this.niveauEtudes = niveauEtudes;
+        this.plat = plat;
     }
 
-    // Méthodes
-    public void ajouterPlat(String plat) {
-        menu.add(plat);
+    public String getId() {
+        return id;
     }
 
-    public void retirerPlat(String plat) {
-        menu.remove(plat);
+    public String getNomm() {
+        return nomm;
     }
 
-    public void inscrireEtudiant(Etudiant etudiant) {
-        listeEtudiantsInscrits.add(etudiant);
+    public String getPrenom() {
+        return prenom;
     }
 
-    public void desinscrireEtudiant(Etudiant etudiant) {
-        listeEtudiantsInscrits.remove(etudiant);
+    public String getEmail() {
+        return email;
     }
 
-    public void afficherMenu() {
-        System.out.println("Menu de la cantine " + nom + " : " + menu);
+    public String getNiveauEtudes() {
+        return niveauEtudes;
     }
 
-    public void afficherEtudiantsInscrits() {
-        System.out.println("Étudiants inscrits à la cantine : ");
-        for (Etudiant e : listeEtudiantsInscrits) {
-            System.out.println(e.getNom() + " " + e.getPrenom());
+    public String getPlat() {
+        return plat;
+    }
+    
+
+  
+
+
+    
+
+
+    /*
+        public void associerEtudiantCantine(Etudiant etudiant) {
+        if (etudiant != null) {
+            if (!etudiantsInscrits.contains(etudiant)) {
+                etudiantsInscrits.add(etudiant);
+                System.out.println("Étudiant " + etudiant.getNom() + " associé à la cantine " + this.getNom());
+            } else {
+                System.out.println("L'étudiant " + etudiant.getNom() + " est déjà inscrit à cette cantine.");
+            }
+        } else {
+            System.out.println("Étudiant invalide, l'association a échoué.");
         }
     }
-
-    // toString
-    @Override
-    public String toString() {
-        return "Cantine {" +
-                "idCantine='" + idCantine + '\'' +
-                ", nom='" + nom + '\'' +
-                ", menu=" + menu +
-                ", listeEtudiantsInscrits=" + listeEtudiantsInscrits +
-                '}';
+*/
+    public String getNom() {
+        return nomm;
     }
+
 }

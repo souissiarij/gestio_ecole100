@@ -1,0 +1,101 @@
+/* Bouton principal */
+.primary-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.primary-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Bouton secondaire */
+.secondary-button {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+/* TableView */
+.table-view {
+    -fx-border-color: #dcdcdc;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+/* style.css */
+
+/* Conteneur principal */
+.main-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulaire */
+.form-container {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels */
+.label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Champs de texte */
+.text-field {
+    -fx-border-radius: 5px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ccc;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+/* Bouton */
+.button {
+    background-color: #007BFF;
+    text-fill: #ffffff;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* TableView */
+.table-view {
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #007BFF;
+    -fx-text-fill: #ffffff;
+}
+
+.table-view .table-row-cell {
+    -fx-border-color: #ddd;
+}
+
+/* Sauts de ligne dans la TableView */
+.table-view .cell {
+    padding: 5px;
+}

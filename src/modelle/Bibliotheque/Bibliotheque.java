@@ -1,29 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelle.Bibliotheque;
-
-/**
- *
- * @author user
- */
 
 import modelle.personnes.Etudiant;
 import java.util.ArrayList;
 
 public class Bibliotheque {
 
-    private String nomBibliotheque;
+    private String idb;
     private ArrayList<String> livresDisponibles;
-    private ArrayList<Etudiant> etudiantsInscrits;
+    private String idE ;
+    private ArrayList<String> emprunts;  // Liste des emprunts sous forme de chaîne
 
     // Constructeur
-    public Bibliotheque(String nomBibliotheque) {
-        this.nomBibliotheque = nomBibliotheque;
-        this.livresDisponibles = new ArrayList<>();
-        this.etudiantsInscrits = new ArrayList<>();
+
+    public Bibliotheque(String idb, ArrayList<String> livresDisponibles, String idE, ArrayList<String> emprunts) {
+        this.idb = idb;
+        this.livresDisponibles = livresDisponibles;
+        this.idE = idE;
+        this.emprunts = emprunts;
     }
+ 
 
     // Ajouter un livre à la bibliothèque
     public void ajouterLivre(String livre) {
@@ -35,36 +30,56 @@ public class Bibliotheque {
         livresDisponibles.remove(livre);
     }
 
-    // Ajouter un étudiant à la bibliothèque
-    public void inscrireEtudiant(Etudiant etudiant) {
-        etudiantsInscrits.add(etudiant);
-    }
-
+    
     // Permet à un étudiant d'emprunter un livre
-    public void emprunterLivre(String livre, Etudiant etudiant) {
+  public void emprunterLivre(String livre) {
         if (livresDisponibles.contains(livre)) {
-            System.out.println(etudiant.getNom() + " a emprunté le livre : " + livre);
-            livresDisponibles.remove(livre);  // Le livre est retiré après l'emprunt
-        } else {
-            System.out.println("Le livre " + livre + " n'est pas disponible.");
+            livresDisponibles.remove(livre);
+            emprunts.add(livre);
         }
-    }
+  }
 
     // Afficher les livres disponibles dans la bibliothèque
-    public void afficherLivres() {
-        System.out.println("Livres disponibles à " + nomBibliotheque + ":");
+    public void afficherLivresDisponibles() {
+        System.out.println("Livres disponibles à " + idb + ":");
         for (String livre : livresDisponibles) {
             System.out.println("- " + livre);
         }
     }
 
-    // Afficher les étudiants inscrits à la bibliothèque
-    public void afficherEtudiants() {
-        System.out.println("Étudiants inscrits à la bibliothèque:");
-        for (Etudiant etudiant : etudiantsInscrits) {
-            System.out.println("- " + etudiant.getNom() + " " + etudiant.getPrenom());
+    // Afficher tous les emprunts effectués
+    public void afficherEmprunts() {
+        System.out.println("Emprunts effectués :");
+        for (String emprunt : emprunts) {
+            System.out.println(emprunt);
         }
     }
 
+    // Afficher les étudiants inscrits à la bibliothèque
+ 
 
+    // Getter pour la liste des livres disponibles
+    public ArrayList<String> getLivresDisponibles() {
+        return livresDisponibles;
+    }
+
+    public String getIdb() {
+        return idb;
+    }
+
+    public String getIdE() {
+        return idE;
+    }
+
+    public ArrayList<String> getEmprunts() {
+        return emprunts;
+    }
+    
+    public void retournerLivre(String livre) {
+        if (emprunts.contains(livre)) {
+            emprunts.remove(livre);
+            livresDisponibles.add(livre);
+        }
+    }
+    
 }

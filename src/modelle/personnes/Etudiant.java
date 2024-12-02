@@ -6,7 +6,8 @@ package modelle.personnes;
 import modelle.matiere.cours;
 import modelle.matiere.matiere;
 import modelle.matiere.certificat ;
-
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 /**
  *
  * @author souis
@@ -27,6 +28,20 @@ public class Etudiant extends Personne {
         this.listeCertificats = new ArrayList<>();
         this.listeAbssences=new ArrayList();
     }
+     public StringProperty nomProperty() {
+        return new SimpleStringProperty(getNom());
+    }
+
+    public StringProperty prenomProperty() {
+        return new SimpleStringProperty(getPrenom());
+    }
+
+    public StringProperty emailProperty() {
+        return new SimpleStringProperty(getEmail());
+    }
+
+    public StringProperty niveauEtudesProperty() {
+return new SimpleStringProperty(getNiveauEtudes()) ;   }
 
     public String getNiveauEtudes() {
         return niveauEtudes;//gg

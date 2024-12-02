@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controlleurs.LoginController" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #2c3e50, #4ca1af);">
+    <children>
+        <!-- Conteneur principal -->
+        <VBox spacing="20" alignment="CENTER" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0" prefWidth="500.0">
+            
+            <!-- Titre de l'interface -->
+            <Text text="Connexion Administrateur" style="
+                    -fx-font-family: 'Arial Black'; 
+                    -fx-font-size: 28px; 
+                    -fx-fill: linear-gradient(from 0% 0% to 100% 100%, #f1c40f, #e67e22); 
+                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 4, 0.5, 2, 2);"/>
+            
+            <!-- Conteneur des champs -->
+            <VBox spacing="15" alignment="CENTER" style="-fx-background-color: rgba(255, 255, 255, 0.8); -fx-background-radius: 15; -fx-padding: 20;">
+                
+                <!-- Champ utilisateur -->
+                <Label text="Nom d'utilisateur:" style="-fx-font-family: 'Arial'; -fx-font-size: 14px; -fx-text-fill: #34495e;"/>
+                <TextField fx:id="usernameField" promptText="Entrez votre nom d'utilisateur" style="
+                        -fx-font-size: 14px; 
+                        -fx-padding: 10; 
+                        -fx-background-radius: 5; 
+                        -fx-border-radius: 5; 
+                        -fx-border-color: #3498db; 
+                        -fx-background-color: white;"/>
+                
+                <!-- Champ mot de passe -->
+                <Label text="Mot de passe:" style="-fx-font-family: 'Arial'; -fx-font-size: 14px; -fx-text-fill: #34495e;"/>
+                <PasswordField fx:id="passwordField" promptText="Entrez votre mot de passe" style="
+                        -fx-font-size: 14px; 
+                        -fx-padding: 10; 
+                        -fx-background-radius: 5; 
+                        -fx-border-radius: 5; 
+                        -fx-border-color: #3498db; 
+                        -fx-background-color: white;"/>
+                
+                <!-- Message d'aide -->
+                        <Label text="Nom d'utilisateur : admin | Mot de passe : password" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
+            </VBox>
+
+            <!-- Bouton de connexion -->
+            <Button text="Se connecter" fx:id="loginButton" onAction="#handleLogin" style="
+                    -fx-font-size: 16px; 
+                    -fx-padding: 10 20; 
+                    -fx-background-color: linear-gradient(to bottom, #27ae60, #2ecc71); 
+                    -fx-text-fill: white; 
+                    -fx-background-radius: 20; 
+                    -fx-border-color: #1e8449; 
+                    -fx-border-radius: 20; 
+                    -fx-border-width: 2; 
+                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 4, 0.5, 2, 2);"/>
+       
+        </VBox>
+    </children>
+</AnchorPane>
