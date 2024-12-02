@@ -20,14 +20,43 @@ public class AdminController {
     administrateur administrateurprincipal = administrateur.getInstance();
 
     @FXML
-    private void handleEtudiant(ActionEvent event) {
-        afficherMessage("Étudiant");
+  private void ouvrirEtudiant(ActionEvent event) {
+    try {
+        // Charger le fichier FXML de Matieregest
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vues/Etudiant.fxml"));
+        Parent matiereView = loader.load();
+        
+        // Obtenir la scène actuelle
+        Scene currentScene = ((Node) event.getSource()).getScene();
+        Stage stage = (Stage) currentScene.getWindow();
+        
+        // Mettre à jour la scène avec la nouvelle vue
+        stage.setScene(new Scene(matiereView));
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+        afficherMessage("Erreur : Impossible de charger l'interface Matieregest.");
     }
+}
 
     @FXML
-    private void handleEnseignant(ActionEvent event) {
-        afficherMessage("Enseignant");
-    }
+    private void ouvrirInterfaceEnseignant(ActionEvent event) {
+  try {
+        // Charger le fichier FXML de Matieregest
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vues/enseignant.fxml"));
+        Parent matiereView = loader.load();
+        
+        // Obtenir la scène actuelle
+        Scene currentScene = ((Node) event.getSource()).getScene();
+        Stage stage = (Stage) currentScene.getWindow();
+        
+        // Mettre à jour la scène avec la nouvelle vue
+        stage.setScene(new Scene(matiereView));
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+        afficherMessage("Erreur : Impossible de charger l'interface Matieregest.");
+    }    }
 
    @FXML
 private void handleMatiere(ActionEvent event) {

@@ -18,6 +18,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import modelle.departement.Cantine;
+import modelle.Bibliotheque.Bibliotheque;
 
 public class administrateur {
      private static administrateur instance; // Instance unique
@@ -26,7 +28,8 @@ public class administrateur {
     private ArrayList<Enseignant> listeProfesseurs;
     private ArrayList<matiere> listeMatieres;
     private Map <Etudiant, EtatEtudiant > resultatetudiants ; 
-
+ private ArrayList<Cantine> listeCan;
+        private ArrayList<Bibliotheque> listeb;
     private ArrayList<certificat> listeCertificats;
 
     // Constructeur
@@ -37,6 +40,8 @@ public class administrateur {
         this.resultatetudiants = new HashMap <>();
      
         this.listeCertificats = new ArrayList<>();
+         this.listeCan = new ArrayList<>();
+              this.listeb = new ArrayList<>();
     }
 // Méthode pour obtenir l'instance unique
     public static administrateur getInstance() {
@@ -189,4 +194,19 @@ public ArrayList<certificat> getListeCertificatsTriee() {
 
     return listeTriee;
 }
+   public ArrayList<Cantine> getListeCan() {
+        return listeCan;
+    }
+
+    public ArrayList<Bibliotheque> getListeb() {
+        return listeb;
+    }
+  
+   public void associerEtudiantCantine(Cantine c) {
+        this.listeCan.add(c);
+    }
+   
+    public void associerEtudiantBibliotheque(Bibliotheque b) {
+        this.listeb.add(b);
+    }
 }
