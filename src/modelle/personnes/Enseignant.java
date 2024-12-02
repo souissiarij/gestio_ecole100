@@ -24,6 +24,7 @@ public class Enseignant extends Personne {
         this.listeMatieresEnseignes = new ArrayList<>(); // Initialisation de la liste
     }
 
+   
  
     
 

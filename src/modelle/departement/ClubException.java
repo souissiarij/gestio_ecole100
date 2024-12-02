@@ -8,7 +8,7 @@ package modelle.departement;
  *
  * @author user
  */
-class ClubException extends Exception {
+public class ClubException extends Exception {
     public ClubException(String message) {
         super(message);
     }

@@ -10,7 +10,7 @@
                    -fx-background-position: center;" 
            
             xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="Controlleurs.CerificatgestController">
+            fx:controller="Controlleurs.ExamenController">
 
     <children>
         <!-- Rectangle semi-transparent en arrière-plan -->
@@ -29,11 +29,11 @@
                    alignment="CENTER" />
 
             <!-- Boutons avec largeur fixe -->
-            <Button text="Ajouter une certificat" onAction="#ajouterCertificat" prefWidth="300" />
-            <Button text="Supprimer une certificat" onAction="#supprimerCertificat" prefWidth="300" />
-            <Button text="Modifier une certificat" onAction="#ModifierCertificat" prefWidth="300" />
-            <Button text="Afficher la liste des certificat" onAction="#afficherListeCertifiact" prefWidth="300" />
-            <Button text="Retour au menu principal" onAction="#handleRetourMenuPrincipal" prefWidth="300" />
+            <Button text="Ajouter un examen"  prefWidth="300" />
+            <Button text="Supprimer un examen"  prefWidth="300" />
+            <Button text="Modifier un examen"  prefWidth="300" />
+            <Button text="Afficher la liste des examens "  prefWidth="300" />
+            <Button text="Retour au menu evaluation" onAction="#handleRetourMenuevaluation" prefWidth="300" />
  
         </VBox>
 

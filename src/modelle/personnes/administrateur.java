@@ -14,10 +14,14 @@ import modelle.evaluation.EtatEtudiant;
  * @author souis
  */
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
 public class administrateur {
+     private static administrateur instance; // Instance unique
+
     private ArrayList<Etudiant> listeEtudiants;
     private ArrayList<Enseignant> listeProfesseurs;
     private ArrayList<matiere> listeMatieres;
@@ -34,7 +38,13 @@ public class administrateur {
      
         this.listeCertificats = new ArrayList<>();
     }
-
+// Méthode pour obtenir l'instance unique
+    public static administrateur getInstance() {
+        if (instance == null) {
+            instance = new administrateur();
+        }
+        return instance;
+    }
     // Getters et Setters
     public ArrayList<Etudiant> getListeEtudiants() {
         return listeEtudiants;
@@ -164,5 +174,19 @@ public void afficherMatieresAvecPlusDeNProfs(int n) {
     if (!matiereTrouvee) {
         System.out.println("Aucune matière n'est enseignée par plus de " + n + " professeurs.");
     }
+}
+public ArrayList<certificat> getListeCertificatsTriee() {
+    // Créer une copie de la liste pour éviter de modifier l'originale
+    ArrayList<certificat> listeTriee = new ArrayList<>(this.listeCertificats);
+
+    // Trier la liste par date d'expiration
+    Collections.sort(listeTriee, new Comparator<certificat>() {
+        @Override
+        public int compare(certificat c1, certificat c2) {
+            return c1.getDateExpiration().compareTo(c2.getDateExpiration());
+        }
+    });
+
+    return listeTriee;
 }
 }

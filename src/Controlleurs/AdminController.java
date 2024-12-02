@@ -5,7 +5,7 @@
 package Controlleurs;
 
 
-
+import modelle.personnes.administrateur;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +17,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 public class AdminController {
+    administrateur administrateurprincipal = administrateur.getInstance();
 
     @FXML
     private void handleEtudiant(ActionEvent event) {
@@ -71,17 +72,61 @@ private void handleMatiere(ActionEvent event) {
 
     @FXML
     private void handleEvaluation(ActionEvent event) {
-        afficherMessage("Évaluation");
+       try {
+        // Charger le fichier FXML de Matieregest
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vues/Evaluation.fxml"));
+        Parent matiereView = loader.load();
+        
+        // Obtenir la scène actuelle
+        Scene currentScene = ((Node) event.getSource()).getScene();
+        Stage stage = (Stage) currentScene.getWindow();
+        
+        // Mettre à jour la scène avec la nouvelle vue
+        stage.setScene(new Scene(matiereView));
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+        afficherMessage("Erreur : Impossible de charger l'interface Evaluation.");
+    }     
     }
 
     @FXML
     private void handleEmploi(ActionEvent event) {
-        afficherMessage("Emploi");
-    }
+     try {
+        // Charger le fichier FXML de Matieregest
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vues/Emploi.fxml"));
+        Parent matiereView = loader.load();
+        
+        // Obtenir la scène actuelle
+        Scene currentScene = ((Node) event.getSource()).getScene();
+        Stage stage = (Stage) currentScene.getWindow();
+        
+        // Mettre à jour la scène avec la nouvelle vue
+        stage.setScene(new Scene(matiereView));
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+        afficherMessage("Erreur : Impossible de charger l'interface Emploi.");
+    }    }
 
     @FXML
     private void handleClub(ActionEvent event) {
-        afficherMessage("Club");
+             try {
+        // Charger le fichier FXML de Matieregest
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vues/club.fxml"));
+        Parent matiereView = loader.load();
+        
+        // Obtenir la scène actuelle
+        Scene currentScene = ((Node) event.getSource()).getScene();
+        Stage stage = (Stage) currentScene.getWindow();
+        
+        // Mettre à jour la scène avec la nouvelle vue
+        stage.setScene(new Scene(matiereView));
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+        afficherMessage("Erreur : Impossible de charger l'interface club.");
+    }  
     }
 
     private void afficherMessage(String message) {

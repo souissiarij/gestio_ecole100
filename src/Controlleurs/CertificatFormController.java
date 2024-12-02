@@ -63,4 +63,16 @@ public class CertificatFormController {
         certificatCree = null;
         ((Stage) idCertificatField.getScene().getWindow()).close();
     }
-}
+
+    void setCertificat(certificat certificatAModifier) {
+          if (certificatAModifier != null) {
+        // Pré-remplir les champs avec les données existantes du certificat
+        idCertificatField.setText(certificatAModifier.getIdCertificat());
+        nomCertificatField.setText(certificatAModifier.getNomCertificat());
+        //dateEmissionPicker.setValue(certificatAModifier.getDateEmission().toLocalDate());
+        //dateExpirationPicker.setValue(certificatAModifier.getDateExpiration().toLocalDate());
+
+        // Préserver l'instance actuelle du certificat (utile pour les modifications)
+        this.certificatCree = certificatAModifier;
+    
+}}}
