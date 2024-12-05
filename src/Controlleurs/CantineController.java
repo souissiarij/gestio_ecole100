@@ -66,6 +66,17 @@ public class CantineController {
         Cantine cantine = new Cantine(id, nom, prenom, email, niveau, plat);
         administrateurprincipal.associerEtudiantCantine(cantine);
         System.out.println("Étudiant enregistré dans la cantine.");
+        idField.clear() ;
+        nomField.clear();
+        platSelectionField.clear();
+                emailField.clear();
+                        niveauEtudesField.clear();
+        prenomField.clear();
+
+                
+
+
+        
     }
 
     public void retour(ActionEvent event) {

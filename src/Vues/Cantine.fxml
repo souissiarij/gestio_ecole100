@@ -38,8 +38,6 @@
         <Button text="Enregistrer" onAction="#enregistreretudiant"
                 style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-border-radius: 10; -fx-background-radius: 10; 
                        -fx-hover-background-color: #2ecc71; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 2, 2);"/>
-        <Button text="Retour" onAction="#retour"
-                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-border-radius: 10; -fx-background-radius: 10; 
-                       -fx-hover-background-color: #c0392b; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 2, 2);"/>
+      
     </HBox>
 </VBox>

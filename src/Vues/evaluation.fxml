@@ -1,41 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
-<?import javafx.geometry.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0"
-            style="-fx-background-image: url('images/welcome.jpg'); 
-                   -fx-background-size: cover; 
-                   -fx-background-position: center;" 
-            xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="Controlleurs.EvaluationController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" style="-fx-background-color: white;" fx:controller="Controlleurs.EvaluationController">
+    <!-- Sidebar: 30% width with blue background and title -->
+    <left>
+        <StackPane style="-fx-background-color: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-padding: 20;">
+            <GridPane hgap="20" vgap="120">
+                <!-- Title in the sidebar -->
+                <Text text="Menu d'évaluation" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-fill: white;" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                
+                <!-- Sidebar options -->
+                <Button text="Gestion des examens" style="-fx-background-color: #E5E1DA; -fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" 
+                        GridPane.rowIndex="1" GridPane.columnIndex="0" prefWidth="300" onAction="#handlexamen"  />
+                <Button text="Gestion des tests" style="-fx-background-color: #E5E1DA; -fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" 
+                        GridPane.rowIndex="2" GridPane.columnIndex="0" prefWidth="300" onAction="#handltest" />
+                <Button text="Gestion des certificats" style="-fx-background-color: #E5E1DA;-fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" 
+                        GridPane.rowIndex="3" GridPane.columnIndex="0" prefWidth="300" onAction="#handleCertificat" />
+            </GridPane>
+        </StackPane>
+    </left>
 
-    <!-- Rectangle semi-transparent pour l'effet -->
-    <Pane prefHeight="400.0" prefWidth="600.0"
-          style="-fx-background-color: rgba(255, 255, 255, 0.6);">
-    </Pane>
+    <!-- Main content: 70% width with initial logo -->
+    <center>
+        <BorderPane style="-fx-padding: 10; -fx-pref-width: 100%; -fx-pref-height: 60px;">
+            <top>
+                <BorderPane>
+                    <right>
+                        <Button text="Back" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-border-color: darkred; -fx-border-width: 1px; -fx-border-radius: 8px;" 
+                            prefWidth="80" onAction="#handleRetourMenuPrincipal"  />
+                    </right>
+                </BorderPane>
+            </top>
+            <center>
+                <!-- Initial logo placeholder -->
+                <ImageView fx:id="logoImageView" fitWidth="800" fitHeight="800" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/logo.png" />
+                    </image>
+                </ImageView>
+                
+            </center>
+        </BorderPane>
+    </center>
 
-    <!-- Conteneur des boutons -->
-    <VBox alignment="CENTER" spacing="15" layoutX="50" layoutY="30"
-          prefHeight="300" prefWidth="500">
-        <Label text="MENU EVALUATION " 
-               style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: black;" 
-               alignment="CENTER"/>
-
-        <!-- Boutons avec largeur fixe -->
-        <Button text="Gestion des examnes" onAction="#handlexamen"    prefWidth="300"/>
-        <Button text="Gestion des tests" onAction="#handltest"  prefWidth="300"/>
-          <Button text="Gestion des certificats " onAction="#handleCertificat"  prefWidth="300"/>
-       
-        
-        
-        <!-- Bouton "Retour au menu principal" -->
-        <Button text="Retour au menu principal" onAction="#handleRetourMenuPrincipal"  prefWidth="300"/>
-    </VBox>
     
+</BorderPane>
 
-</AnchorPane>

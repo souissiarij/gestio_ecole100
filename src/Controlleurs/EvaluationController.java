@@ -35,7 +35,7 @@ public class EvaluationController implements Initializable {
     public void handlexamen (ActionEvent event){
     try {
         // Charger le fichier FXML de Matieregest
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vues/Examen.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vues/examen.fxml"));
         Parent matiereView = loader.load();
         
         // Obtenir la scène actuelle

@@ -20,6 +20,7 @@ public class Etudiant extends Personne {
     private ArrayList<cours> listeCoursInscrits;
     private ArrayList<certificat> listeCertificats;
     private ArrayList<Absence> listeAbssences ;
+    private String nbabsence ;
 
     public Etudiant(String id, String nom, String prenom, String email, String niveauEtudes) {
         super(id, nom, prenom, email); // Appel au constructeur de Personne
@@ -28,6 +29,24 @@ public class Etudiant extends Personne {
         this.listeCertificats = new ArrayList<>();
         this.listeAbssences=new ArrayList();
     }
+
+    public void setNbabsence(String nbabsence) {
+        this.nbabsence = nbabsence;
+    }
+
+    public String getNbabsence() {
+        return nbabsence;
+    }
+
+   
+   public Etudiant(String id, String nom, String prenom, String email, String niveauEtudes,String nbabsence) {
+        super(id, nom, prenom, email); // Appel au constructeur de Personne
+        this.niveauEtudes = niveauEtudes;
+        this.listeCoursInscrits = new ArrayList<>(); // Initialisation des listes
+        this.listeCertificats = new ArrayList<>();
+        this.listeAbssences=new ArrayList();
+    }
+
      public StringProperty nomProperty() {
         return new SimpleStringProperty(getNom());
     }
@@ -81,4 +100,7 @@ public void ajouterAbsence(Absence a){
                 ", listeAbsences=" + listeAbssences +
                 '}';
     }
+
+
 }
+

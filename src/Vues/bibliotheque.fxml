@@ -23,7 +23,6 @@
     <HBox spacing="20" alignment="center">
         <Button text="Enregistrer" onAction="#enregistreretudiant"
                 style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10; -fx-border-radius: 5; -fx-background-radius: 5;" />
-        <Button text="Retour" onAction="#retour"
-                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10; -fx-border-radius: 5; -fx-background-radius: 5;" />
+
     </HBox>
 </VBox>  

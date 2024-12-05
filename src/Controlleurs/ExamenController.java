@@ -22,7 +22,7 @@ import modelle.evaluation.examen;
 import modelle.matiere.cours;
 import modelle.personnes.administrateur;
 
-public class ExamenController {
+    public class ExamenController {
     // Référence à l'administrateur principal
     administrateur administrateurprincipal = administrateur.getInstance();
 
