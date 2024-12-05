@@ -8,7 +8,6 @@
             style="-fx-background-image: url('images/welcome.jpg'); 
                    -fx-background-size: cover; 
                    -fx-background-position: center;" 
-           
             xmlns:fx="http://javafx.com/fxml/1" 
             fx:controller="Controlleurs.TestController">
 
@@ -24,32 +23,32 @@
               prefHeight="300" prefWidth="500">
             
             <!-- Titre -->
-            <Label text="MENU CERTIFICAT" 
+            <Label text="MENU Test" 
                    style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: black;" 
                    alignment="CENTER" />
 
             <!-- Boutons avec largeur fixe -->
-            <Button text="Ajouter un test"  prefWidth="300" />
-            <Button text="Supprimer un test"  prefWidth="300" />
-            <Button text="Modifier un test"  prefWidth="300" />
-            <Button text="Afficher la liste des test  "  prefWidth="300" />
-            <Button text="Retour au menu evaluation" onAction="#handleRetourMenuevaluation" prefWidth="300" />
+            <Button text="Ajouter un test" onAction="#ajouterTest" prefWidth="300" />
+            <Button text="Supprimer un test" onAction="#supprimerTest" prefWidth="300" />
+            <Button text="Modifier un test" onAction="#modifierTest" prefWidth="300" />
+            <Button text="Afficher la liste des tests" onAction="#afficherListeTest" prefWidth="300" />
+            <Button text="Retour au menu evaluation" onAction="#handleRetourMenuevaluhation" prefWidth="300" />
  
         </VBox>
 
-        <!-- TableView pour afficher la liste des certificats -->
+        <!-- TableView pour afficher la liste des tests -->
         <VBox alignment="TOP_CENTER" spacing="10" layoutX="50" layoutY="350"
               prefHeight="300" prefWidth="500">
             
             <!-- Titre pour le tableau -->
-            <Label text="Liste des Certificats" style="-fx-font-size: 18px;" />
+            <Label text="Liste des tests" style="-fx-font-size: 18px;" />
 
-            <TableView fx:id="certificatTable" prefHeight="300" prefWidth="500" visible="false">
+            <TableView fx:id="testTable" prefHeight="300" prefWidth="500" visible="false">
                 <columns>
-                    <TableColumn fx:id="idColumn" text="ID Certificat" prefWidth="100" />
-                    <TableColumn fx:id="nomColumn" text="Nom Certificat" prefWidth="150" />
-                    <TableColumn fx:id="dateEmissionColumn" text="Date d'Émission" prefWidth="125" />
-                    <TableColumn fx:id="dateExpirationColumn" text="Date d'Expiration" prefWidth="125" />
+                    <TableColumn fx:id="idEvaluation" text="ID Test" prefWidth="100" />
+                    <TableColumn fx:id="typeColumn" text="Type de Test" prefWidth="150" />
+                    <TableColumn fx:id="niveauDifficulteColumn" text="Niveau de Difficulté" prefWidth="125" />
+                    <TableColumn fx:id="coursColumn" text="Cours de Test" prefWidth="125" />
                 </columns>
             </TableView>
         </VBox>

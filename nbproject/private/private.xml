@@ -2,6 +2,26 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Controlleurs/TestController.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/Etudiant.fxml</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Controlleurs/bibliothequeController.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/evaluation/examen.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/matieregest.fxml</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/test.fxml</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/Cantine.fxml</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/personnes/administrateur.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Controlleurs/ExamenController.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/login.fxml</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Controlleurs/EtudiantController.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/admin.fxml</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Controlleurs/MatieregestController.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/Club.fxml</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Controlleurs/EvaluationController.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/modelle/evaluation/evaluation.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/Emploi.fxml</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/gestioEcole100/GestioEcole100.java</file>
+            <file>file:/C:/Users/souis/OneDrive/Documents/NetBeansProjects/gestio%20ecole100/src/Vues/examen.fxml</file>
+        </group>
     </open-files>
 </project-private>

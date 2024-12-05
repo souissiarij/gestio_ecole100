@@ -1,45 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controlleurs.WelcomeController" prefHeight="400.0" prefWidth="600.0">
-    <children>
-        <!-- Image de fond -->
-        <ImageView fitWidth="600.0" fitHeight="400.0" preserveRatio="false" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0">
-            <image>
-                <Image url="@../images/welcome.jpg"/>
-            </image>
-        </ImageView>
 
-        <!-- Contenu aligné verticalement à droite -->
-        <VBox alignment="CENTER" spacing="20" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
-            <!-- Texte Bienvenue -->
-            <Text text="Bienvenue" style="
-                    -fx-font-family: 'Arial Bold'; 
-                    -fx-font-size: 36px; 
-                    -fx-fill: linear-gradient(from 0% 0% to 100% 100%, white, lightblue); 
-                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75), 4, 0.5, 2, 2);"/>
-            
-            <!-- Titre SchoolHub -->
-            <Text text="SchoolHub" style="
-                    -fx-font-family: 'Arial'; 
-                    -fx-font-size: 24px; 
-                    -fx-fill: linear-gradient(from 0% 0% to 100% 100%, lightgray, darkgray); 
-                    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 3, 0.3, 1, 1);"/>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controlleurs.WelcomeController" style="-fx-background-color: linear-gradient(to bottom, #d9e9ff, #ffffff);">
+    <center>
+        <HBox spacing="0" prefHeight="500.0" prefWidth="800.0">
+            <!-- Left Section: Login Form -->
+            <VBox spacing="20" alignment="CENTER" HBox.hgrow="ALWAYS" style="-fx-background-color: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-padding: 30;">
+                <Text text="Bienvenue" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-fill: white;"/>
+                <Button text="Entrer" fx:id="btnEnter" onAction="#goToAdmin" style="-fx-font-size: 20px; -fx-background-color: white; -fx-text-fill: black; -fx-text-weight: bold ;-fx-padding: 10 20; -fx-background-radius: 5;"/>
+            </VBox>
 
-            <!-- Bouton Entrer -->
-            <Button text="Entrer" fx:id="btnEnter" onAction="#goToAdmin" style="
-                -fx-font-size: 18px; 
-                -fx-padding: 12px 30px; 
-                -fx-background-color: linear-gradient(to bottom, #8bc34a, #689f38);
-                -fx-text-fill: white; 
-                -fx-background-radius: 15; 
-                -fx-border-color: #558b2f; 
-                -fx-border-width: 2; 
-                -fx-border-radius: 15;"/>
-        </VBox>
-    </children>
-</AnchorPane>
+            <!-- Right Section: Blue Background with Image -->
+            <VBox alignment="CENTER" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-padding: 50;">
+                <ImageView fx:id="imageView" fitWidth="400" preserveRatio="true" style="-fx-alignment: center;" >
+                    <image>
+                        <Image url="@../images/logo.png"/>
+                    </image>
+                </ImageView>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

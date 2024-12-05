@@ -1,34 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 
-<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="Controlleurs.AdminController" style="-fx-font-family: Arial;">
+<BorderPane    xmlns:fx="http://javafx.com/fxml" fx:controller="Controlleurs.AdminController" style="-fx-background-color: #F9FAFB;" stylesheets ="@../style.css">
+    <!-- Title at the top -->
+    <top>
+        <Text text="Menu Principal" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-fill: #333;" BorderPane.alignment="CENTER" />
+    </top>
 
-    <!-- Image de fond -->
-    <ImageView fitWidth="600" fitHeight="400" preserveRatio="true">
-        <Image url="@../images/welcome.jpg"/> <!-- Remplacez par votre image -->
-    </ImageView>
+    <!-- Buttons with images in the center -->
+    <center>
+        <GridPane alignment="CENTER" style="-fx-padding: 20;" hgap="20" vgap="20">
+            <!-- Define column constraints for even distribution -->
+            <columnConstraints>
+                <ColumnConstraints percentWidth="30" />
+                <ColumnConstraints percentWidth="30" />
+                <ColumnConstraints percentWidth="30" />
+            </columnConstraints>
+            <!-- Define row constraints for even distribution -->
+            <rowConstraints>
+                <RowConstraints percentHeight="40" />
+                <RowConstraints percentHeight="40" />
+            </rowConstraints>
 
-    <!-- Contenu de l'interface -->
-    <VBox alignment="CENTER" spacing="20" style="-fx-background-color: rgba(255, 255, 255, 0.6); -fx-padding: 20;">
-        <!-- Titre -->
-        <Text text="MENU PRINCIPAL" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+            <!-- Enseignant -->
+            <Button styleClass="hover-button"
+                    GridPane.rowIndex="0" GridPane.columnIndex="0" maxWidth="Infinity" maxHeight="Infinity" onAction="#ouvrirInterfaceEnseignant" >
+                <graphic>
+                    <ImageView fitWidth="150" fitHeight="150" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/teacherr.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
 
-        <!-- Boutons -->
-        <Button text="Étudiant" onAction="#handleEtudiant" style="-fx-pref-width: 150;"/>
-        <Button text="Enseignant" onAction="#handleEnseignant" style="-fx-pref-width: 150;"/>
-        <Button text="Matière" onAction="#handleMatiere" style="-fx-pref-width: 150;"/>
-        <Button text="Certificat" onAction="#handleCertificat" style="-fx-pref-width: 150;"/>
-        <Button text="Évaluation" onAction="#handleEvaluation" style="-fx-pref-width: 150;"/>
-        <Button text="Emploi" onAction="#handleEmploi" style="-fx-pref-width: 150;"/>
-        <Button text="Club" onAction="#handleClub" style="-fx-pref-width: 150;"/>
-        
-            </VBox>
+            <!-- Étudiant -->
+            <Button styleClass="hover-button"
+                    GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity" maxHeight="Infinity" onAction="#ouvrirEtudiant" >
+                <graphic>
+                    <ImageView fitWidth="150" fitHeight="150" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/etudiant.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
 
-       
-</StackPane>
+            <!-- Club -->
+            <Button styleClass="hover-button"  
+                    GridPane.rowIndex="0" GridPane.columnIndex="2" maxWidth="Infinity" maxHeight="Infinity" onAction="#handleClub"  > 
+                <graphic>
+                    <ImageView fitWidth="150" fitHeight="150" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/club.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <!-- Emploi -->
+            <Button styleClass="hover-button"
+                    GridPane.rowIndex="1" GridPane.columnIndex="0" maxWidth="Infinity" maxHeight="Infinity" onAction="#handleEmploi"  >
+                <graphic>
+                    <ImageView fitWidth="150" fitHeight="150" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/emploi.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <!-- Matière -->
+            <Button styleClass="hover-button"
+                    GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity" maxHeight="Infinity" onAction="#handleMatiere" >
+                <graphic>
+                    <ImageView fitWidth="150" fitHeight="150" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/matiere.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <!-- Évaluation -->
+            <Button styleClass="hover-button"
+                    GridPane.rowIndex="1" GridPane.columnIndex="2" maxWidth="Infinity" maxHeight="Infinity" onAction="#handleEvaluation" >
+                <graphic>
+                    <ImageView fitWidth="150" fitHeight="150" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/evaluation.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </GridPane>
+    </center>
+</BorderPane>

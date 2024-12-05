@@ -256,7 +256,7 @@ private void ajouterCertificat(ActionEvent event) {
     private void handleRetourMenuPrincipal(ActionEvent event) {
     try {
         // Charger le fichier FXML du menu principal
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/vues/admin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/vues/evaluation.fxml"));
         Parent root = loader.load();
 
         // Obtenir la scène actuelle et définir le nouveau contenu

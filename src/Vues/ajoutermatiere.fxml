@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.geometry.*?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ComboBox?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleurs.AjouterMatiereController" prefHeight="400.0" prefWidth="600.0">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleurs.AjouterMatiereController" prefHeight="500.0" prefWidth="600.0">
 
     <!-- Titre -->
     <VBox alignment="CENTER" spacing="15" layoutX="50" layoutY="30" prefWidth="500">
@@ -16,24 +17,39 @@
             <TextField fx:id="titreMatiereField" promptText="Entrez le titre de la matière"/>
         </HBox>
 
-        <!-- Champ pour les enseignants -->
+        <!-- Sélection du type de cours -->
         <HBox spacing="10">
-            <Label text="Nom de l'enseignant :" />
-            <TextField fx:id="enseignantNomField" promptText="Entrez le nom de l'enseignant"/>
-        </HBox>
-        <HBox spacing="10">
-            <Label text="Spécialité de l'enseignant :" />
-            <TextField fx:id="enseignantSpecialiteField" promptText="Entrez la spécialité"/>
+            <Label text="Type de cours :" />
+            <ComboBox fx:id="typeCoursComboBox" promptText="Choisir un type"/>
         </HBox>
 
-        <!-- Bouton pour ajouter un enseignant -->
-        <Button text="Ajouter Enseignant" onAction="#ajouterEnseignant" />
-
-        <!-- Champ pour les cours -->
-        <HBox spacing="10">
-            <Label text="Titre du cours :" />
-            <TextField fx:id="coursTitreField" promptText="Entrez le titre du cours"/>
-        </HBox>
+        <!-- Champs spécifiques au cours -->
+        <VBox fx:id="formulaireCours" spacing="10">
+            <HBox spacing="10">
+                <Label text="Titre du cours :" />
+                <TextField fx:id="coursTitreField" promptText="Entrez le titre du cours"/>
+            </HBox>
+            <HBox spacing="10" fx:id="enseignantSection">
+                <Label text="Enseignant :" />
+                <TextField fx:id="enseignantNomField" promptText="Nom de l'enseignant"/>
+            </HBox>
+            <HBox spacing="10" fx:id="videoSection" visible="false">
+                <Label text="URL vidéo :" />
+                <TextField fx:id="urlVideoField" promptText="Entrez l'URL de la vidéo"/>
+                <Label text="Durée (min) :" />
+                <TextField fx:id="dureeVideoField" promptText="Durée"/>
+                <Label text="Taille (MB) :" />
+                <TextField fx:id="tailleVideoField" promptText="Taille"/>
+            </HBox>
+            <HBox spacing="10" fx:id="documentSection" visible="false">
+                <Label text="Format :" />
+                <TextField fx:id="formatDocumentField" promptText="Entrez le format"/>
+                <Label text="Pages :" />
+                <TextField fx:id="pagesDocumentField" promptText="Nombre de pages"/>
+                <Label text="Taille (MB) :" />
+                <TextField fx:id="tailleDocumentField" promptText="Taille"/>
+            </HBox>
+        </VBox>
 
         <!-- Bouton pour ajouter un cours -->
         <Button text="Ajouter Cours" onAction="#ajouterCours" />
@@ -42,3 +58,4 @@
         <Button text="Enregistrer" onAction="#enregistrerMatiere" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
     </VBox>
 </AnchorPane>
+

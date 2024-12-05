@@ -3,11 +3,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 <?import javafx.geometry.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0"
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="800.0"
             style="-fx-background-image: url('images/welcome.jpg'); 
                    -fx-background-size: cover; 
                    -fx-background-position: center;" 
@@ -28,17 +26,29 @@
 
         <!-- Boutons avec largeur fixe -->
         <Button text="Ajouter une matière"   onAction="#ajouterMatiere" prefWidth="300"/>
-        <Button text="Supprimer une matière" prefWidth="300"/>
-        <Button text="Afficher une matière" prefWidth="300"/>
-        <Button text="Modifier une matière" prefWidth="300"/>
-        <Button text="Afficher la liste des matières" prefWidth="300"/>
-        <Button text="Ajouter un professeur à une matière" prefWidth="300"/>
-        <Button text="Ajouter un cours à une matière" prefWidth="300"/>
-        <Button text="Afficher les matières selon un critère" prefWidth="300"/>
+        <Button text="Supprimer une matière" onAction="#supprimerMatiere" prefWidth="300"/>
+        <Button text="Afficher une matiere" onAction="#afficherMatiereParId" prefWidth="300"/>
+        <Button text="Afficher la liste des matières" onAction="#afficherListeMatieres" prefWidth="300"/>
+       
         
         <!-- Bouton "Retour au menu principal" -->
         <Button text="Retour au menu principal" onAction="#handleRetourMenuPrincipal" prefWidth="300"/>
     </VBox>
-    
+
+    <!-- TableView pour afficher la liste des matières -->
+    <VBox alignment="TOP_CENTER" spacing="10" layoutX="50" layoutY="350"
+          prefHeight="400" prefWidth="700">
+        
+        <!-- Titre pour le tableau -->
+        <Label text="Liste des matières" style="-fx-font-size: 18px;" />
+        
+        <!-- TableView -->
+        <TableView fx:id="matiereTable" VBox.vgrow="ALWAYS" prefHeight="350" prefWidth="700">
+            <columns>
+                <TableColumn fx:id="idMatiereColumn" text="ID" prefWidth="100"/>
+                <TableColumn fx:id="titreMatiereColumn" text="Titre" prefWidth="200"/>
+            </columns>
+        </TableView>
+    </VBox>
 
 </AnchorPane>

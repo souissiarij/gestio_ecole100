@@ -14,10 +14,10 @@ import modelle.matiere.matiere;
 public class test extends evaluation {
     private String typeTest;
     private int niveauDifficulte;
-    private cours coursDeTest;
+    private String coursDeTest;
 
     // Constructeur
-    public test(int idEvaluation, Date dateEvaluation, matiere matiereEvaluation, String typeTest, int niveauDifficulte, cours coursDeTest) {
+    public test(int idEvaluation, Date dateEvaluation,String matiereEvaluation, String typeTest, int niveauDifficulte, String coursDeTest) {
         super(idEvaluation, dateEvaluation, matiereEvaluation);
         this.typeTest = typeTest;
         this.niveauDifficulte = niveauDifficulte;
@@ -41,11 +41,11 @@ public class test extends evaluation {
         this.niveauDifficulte = niveauDifficulte;
     }
 
-    public cours getCoursDeTest() {
+    public String getCoursDeTest() {
         return coursDeTest;
     }
 
-    public void setCoursDeTest(cours coursDeTest) {
+    public void setCoursDeTest(String coursDeTest) {
         this.coursDeTest = coursDeTest;
     }
 

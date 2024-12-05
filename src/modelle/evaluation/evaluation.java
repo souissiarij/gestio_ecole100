@@ -14,15 +14,15 @@ import java.util.Date;
 public abstract class evaluation {
     protected int idEvaluation;           // Identifiant unique pour chaque évaluation
     protected  Date dateEvaluation;        // Date de l'évaluation
-    protected  matiere matiereEvaluation;  // Matière de l'évaluation
+    protected String matiereEvaluation;  // Matière de l'évaluation
 
     // Constructeur
-    public evaluation(int idEvaluation, Date dateEvaluation, matiere matiereEvaluation) {
+    public evaluation(int idEvaluation, Date dateEvaluation, String matiereEvaluation) {
         this.idEvaluation = idEvaluation;
         this.dateEvaluation = dateEvaluation;
         this.matiereEvaluation = matiereEvaluation;
     }
-    public evaluation ( int idEvaluation , matiere matiereevaluation )
+    public evaluation ( int idEvaluation , String matiereevaluation )
             
     {this.idEvaluation= idEvaluation ; 
     this.dateEvaluation= null;
@@ -45,11 +45,11 @@ public abstract class evaluation {
         this.dateEvaluation = dateEvaluation;
     }
 
-    public matiere getMatiereEvaluation() {
+    public String getMatiereEvaluation() {
         return matiereEvaluation;
     }
 
-    public void setMatiereEvaluation(matiere matiereEvaluation) {
+    public void setMatiereEvaluation(String matiereEvaluation) {
         this.matiereEvaluation = matiereEvaluation;
     }
 

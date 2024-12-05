@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0"
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="800.0"
             style="-fx-background-image: url('images/welcome.jpg'); 
                    -fx-background-size: cover; 
                    -fx-background-position: center;" 

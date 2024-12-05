@@ -99,3 +99,24 @@
 .table-view .cell {
     padding: 5px;
 }
+.hover-button {
+    -fx-background-color: linear-gradient(to bottom, white, #4ca1af, #2c3e50);
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 10; /* Default padding for spacing */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0, 0, 0); /* Optional shadow effect */
+    -fx-transition: -fx-scale-x 0.2s, -fx-scale-y 0.2s;
+}
+
+.hover-button:hover {
+    -fx-scale-x: 1.1; /* Slightly enlarge on hover */
+    -fx-scale-y: 1.1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 20, 0, 0, 0); /* Stronger shadow on hover */
+}
+
+.hover-button:pressed {
+    -fx-scale-x: 1; /* Return to original size when clicked */
+    -fx-scale-y: 1;
+}

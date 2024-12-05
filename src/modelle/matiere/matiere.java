@@ -17,22 +17,35 @@ public class matiere {
     private static int compteurId = 0;  // Compteur pour générer les IDs
     private int idMatiere;              // ID unique pour chaque matière
     private String titreMatiere;        // Titre de la matière
-    private List<Enseignant> enseignants; // Liste des enseignants pour cette matière
     private List<cours> cours;          // Liste des cours pour cette matière
 
     // Constructeur
     public matiere(String titreMatiere) {
         this.idMatiere = ++compteurId;       // ID auto-incrémenté
         this.titreMatiere = titreMatiere;
-        this.enseignants = new ArrayList<>(); // Initialisation des listes vides
+       
         this.cours = new ArrayList<>();
     }
-
+   public matiere()
+   {this.idMatiere = ++compteurId; 
+   this.titreMatiere="";
+     
+   this.cours= new ArrayList<>();}
     // Getters et Setters
     public int getIdMatiere() {
         return idMatiere;
     }
 
+    /**
+     *
+     * @return
+     */
+    public List<cours> getcours()
+    {return cours;}
+    public int getCoursSize()
+    { return cours.size();
+    }
+        
     public String getTitreMatiere() {
         return titreMatiere;
     }
@@ -41,18 +54,13 @@ public class matiere {
         this.titreMatiere = titreMatiere;
     }
 
-    public List<Enseignant> getEnseignants() {
-        return enseignants;
-    }
+   
 
     public List<cours> getCours() {
         return cours;
     }
 
-    // Méthode pour ajouter un enseignant à la liste des enseignants
-    public void ajouterEnseignant(Enseignant enseignant) {
-        enseignants.add(enseignant);
-    }
+    
 
     // Méthode pour ajouter un cours à la liste des cours
     public void ajouterCours(cours cours) {
@@ -82,7 +90,13 @@ public class matiere {
     public String toString() {
         return "Matière ID: " + idMatiere + "\n" +
                "Titre de la matière: " + titreMatiere + "\n" +
-               "Enseignants: " + enseignants + "\n" +
+
                "Cours: " + cours;
     }
+
+    public void setListeCours(ArrayList<cours> listeCours) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+   
 }

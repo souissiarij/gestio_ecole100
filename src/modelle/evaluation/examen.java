@@ -19,7 +19,7 @@ public class examen extends evaluation {
     private List<cours> listeDesChapitres;
 
     // Constructeur
-    public examen(int idEvaluation, Date dateEvaluation, matiere matiereEvaluation, float coefficient, List<cours> listeDesChapitres) {
+    public examen(int idEvaluation, Date dateEvaluation, String matiereEvaluation, float coefficient, List<cours> listeDesChapitres) {
         super(idEvaluation, dateEvaluation, matiereEvaluation);
         this.coefficient = coefficient;
         this.listeDesChapitres = listeDesChapitres;

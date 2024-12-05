@@ -152,7 +152,8 @@ public void initialize() {
         niveauColumn.setCellValueFactory(new PropertyValueFactory<>("niveauEtudes"));
         platColumn.setCellValueFactory(new PropertyValueFactory<>("plat"));
 
-        ObservableList<Cantine> cantines = FXCollections.observableArrayList(administrateurprincipal.getListeCan());
+        ObservableList<Cantine> cantines;
+    cantines = FXCollections.observableArrayList(administrateurprincipal.getListeCan());
         cantineTable.setItems(cantines);
     }
 

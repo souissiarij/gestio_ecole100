@@ -29,7 +29,8 @@
         <!-- Boutons avec largeur fixe -->
         <Button text="Gestion des examnes" onAction="#handlexamen"    prefWidth="300"/>
         <Button text="Gestion des tests" onAction="#handltest"  prefWidth="300"/>
-        <Button text="Resultats"  prefWidth="300"/> 
+          <Button text="Gestion des certificats " onAction="#handleCertificat"  prefWidth="300"/>
+       
         
         
         <!-- Bouton "Retour au menu principal" -->

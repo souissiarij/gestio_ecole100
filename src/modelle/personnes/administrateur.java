@@ -4,8 +4,8 @@
  */
 package modelle.personnes;
 import modelle.matiere.matiere;
-import modelle.matiere.cours; 
-import modelle.matiere.certificat; 
+import modelle.matiere.cours;
+import modelle.matiere.certificat;
 import modelle.personnes.Absence;
 import modelle.evaluation.EtatEtudiant;
 
@@ -20,14 +20,18 @@ import java.util.HashMap;
 import java.util.Map;
 import modelle.departement.Cantine;
 import modelle.Bibliotheque.Bibliotheque;
+import modelle.evaluation.examen;
+import modelle.evaluation.test;
 
 public class administrateur {
      private static administrateur instance; // Instance unique
 
     private ArrayList<Etudiant> listeEtudiants;
     private ArrayList<Enseignant> listeProfesseurs;
+    private ArrayList<examen> ListeExamen;
+    private ArrayList<test> Listeteste;
     private ArrayList<matiere> listeMatieres;
-    private Map <Etudiant, EtatEtudiant > resultatetudiants ; 
+    private Map <Etudiant, EtatEtudiant > resultatetudiants ;
  private ArrayList<Cantine> listeCan;
         private ArrayList<Bibliotheque> listeb;
     private ArrayList<certificat> listeCertificats;
@@ -38,7 +42,8 @@ public class administrateur {
         this.listeProfesseurs = new ArrayList<>();
         this.listeMatieres = new ArrayList<>();
         this.resultatetudiants = new HashMap <>();
-     
+         this.ListeExamen=new ArrayList<>();
+         this.Listeteste= new ArrayList<>();
         this.listeCertificats = new ArrayList<>();
          this.listeCan = new ArrayList<>();
               this.listeb = new ArrayList<>();
@@ -54,7 +59,8 @@ public class administrateur {
     public ArrayList<Etudiant> getListeEtudiants() {
         return listeEtudiants;
     }
-
+     public  ArrayList<examen> getListExamen ()
+     {return ListeExamen;}
     public void setListeEtudiants(ArrayList<Etudiant> listeEtudiants) {
         this.listeEtudiants = listeEtudiants;
     }
@@ -62,7 +68,10 @@ public class administrateur {
     public ArrayList<Enseignant> getListeProfesseurs() {
         return listeProfesseurs;
     }
-
+public ArrayList<test> getlistetest()
+{ return Listeteste;}
+public void ajouterteste(test teste)
+{this.Listeteste.add(teste);}
     public void setListeProfesseurs(ArrayList<Enseignant> listeProfesseurs) {
         this.listeProfesseurs = listeProfesseurs;
     }
@@ -74,7 +83,7 @@ public class administrateur {
     public void setListeMatieres(ArrayList<matiere> listeMatieres) {
         this.listeMatieres = listeMatieres;
     }
-    
+   
     public ArrayList<certificat> getListeCertificats() {
         return listeCertificats;
     }
@@ -146,8 +155,8 @@ public void afficherEtudiantsAvecAbsences(int n) {
     // Parcourir la liste des étudiants
     for (Etudiant etudiant : this.listeEtudiants) {
         s= etudiant.getabsences();
-        
-        
+       
+       
         if (s.size() > n) {
             System.out.println("Nom : " + etudiant.getNom() + ", Prénom : " + etudiant.getPrenom());
             etudiantTrouve = true;
@@ -158,7 +167,7 @@ public void afficherEtudiantsAvecAbsences(int n) {
         System.out.println("Aucun étudiant n'a plus de " + n + " absences.");
     }
 }
-public void afficherMatieresAvecPlusDeNProfs(int n) {
+/*public void afficherMatieresAvecPlusDeNProfs(int n) {
     // Vérifier si la liste des matières est vide
     if (this.listeMatieres.isEmpty()) {
         System.out.println("Aucune matière enregistrée.");
@@ -179,7 +188,7 @@ public void afficherMatieresAvecPlusDeNProfs(int n) {
     if (!matiereTrouvee) {
         System.out.println("Aucune matière n'est enseignée par plus de " + n + " professeurs.");
     }
-}
+}*/
 public ArrayList<certificat> getListeCertificatsTriee() {
     // Créer une copie de la liste pour éviter de modifier l'originale
     ArrayList<certificat> listeTriee = new ArrayList<>(this.listeCertificats);
@@ -201,7 +210,7 @@ public ArrayList<certificat> getListeCertificatsTriee() {
     public ArrayList<Bibliotheque> getListeb() {
         return listeb;
     }
-  
+ 
    public void associerEtudiantCantine(Cantine c) {
         this.listeCan.add(c);
     }

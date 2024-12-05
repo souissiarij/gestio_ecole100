@@ -103,4 +103,24 @@ public class EvaluationController implements Initializable {
         alert.setContentText("Vous avez cliqué sur : " + message);
         alert.showAndWait();
     }
+    
+    @FXML
+    private void handleCertificat(ActionEvent event) {
+         try {
+        // Charger le fichier FXML de Matieregest
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vues/Cerificatgest.fxml"));
+        Parent matiereView = loader.load();
+        
+        // Obtenir la scène actuelle
+        Scene currentScene = ((Node) event.getSource()).getScene();
+        Stage stage = (Stage) currentScene.getWindow();
+        
+        // Mettre à jour la scène avec la nouvelle vue
+        stage.setScene(new Scene(matiereView));
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+        afficherMessage("Erreur : Impossible de charger l'interface Cerificatgestt.");
+    }
+    }
 }
