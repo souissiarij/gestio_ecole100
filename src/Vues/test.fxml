@@ -1,56 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
 
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.geometry.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controlleurs.TestController"
+            style="-fx-background-color: white;"
+            stylesheets="@../style.css">
+    <!-- Sidebar -->
+    <left>
+         <StackPane style="-fx-background-color: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-padding: 20;">
+            <GridPane hgap="20" vgap="120">
+                <!-- Title in the sidebar -->
+                <Text text="Menu des testes" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-fill: white;" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                
+                <!-- Sidebar options -->
+                <Button text="Gestion des examens"   onAction="#aller_a_examen"    style="-fx-background-color: #E5E1DA; -fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" 
+                        GridPane.rowIndex="1" GridPane.columnIndex="0" prefWidth="300"  />
+                <Button text="Gestion des tests" style="-fx-background-color: #E5E1DA; -fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" 
+                        GridPane.rowIndex="2" GridPane.columnIndex="0" prefWidth="300"   />
+                <Button text="Gestion des certificats" style="-fx-background-color: #E5E1DA;-fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" 
+                        GridPane.rowIndex="3" GridPane.columnIndex="0" prefWidth="300" onAction="#aller_a_certifiact" />
+            </GridPane>
+        </StackPane>
+    </left>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0"
-            style="-fx-background-image: url('images/welcome.jpg'); 
-                   -fx-background-size: cover; 
-                   -fx-background-position: center;" 
-            xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="Controlleurs.TestController">
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <!-- Header -->
+            <Text text="Menu des testes" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-fill: #333;" />
 
-    <children>
-        <!-- Rectangle semi-transparent en arrière-plan -->
-        <Pane prefHeight="400.0" prefWidth="900.0"
-              style="-fx-background-color: rgba(255, 255, 255, 0.6);"
-              mouseTransparent="true">
-        </Pane>
+            <!-- Buttons -->
+            <HBox spacing="20" alignment="CENTER">
+                <Button text="Afficher" styleClass="hover-button" style="-fx-font-size: 16px;" prefWidth="100" onAction="#afficherListeTest" />
+                <Button text="Ajouter" styleClass="hover-button" style="-fx-font-size: 16px;" prefWidth="100" onAction="#ajouterTest"  />
+                <Button text="Modifier" styleClass="hover-button" style="-fx-font-size: 16px;" prefWidth="100" onAction="#modifierTest"  />
+                <Button text="Supprimer" styleClass="hover-button" style="-fx-font-size: 16px;" prefWidth="100" onAction="#supprimerTest" />
+            </HBox>
 
-        <!-- Conteneur principal pour les boutons et le tableau -->
-        <VBox alignment="CENTER" spacing="15" layoutX="50" layoutY="30"
-              prefHeight="300" prefWidth="500">
-            
-            <!-- Titre -->
-            <Label text="MENU Test" 
-                   style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: black;" 
-                   alignment="CENTER" />
-
-            <!-- Boutons avec largeur fixe -->
-            <Button text="Ajouter un test" onAction="#ajouterTest" prefWidth="300" />
-            <Button text="Supprimer un test" onAction="#supprimerTest" prefWidth="300" />
-            <Button text="Modifier un test" onAction="#modifierTest" prefWidth="300" />
-            <Button text="Afficher la liste des tests" onAction="#afficherListeTest" prefWidth="300" />
-            <Button text="Retour au menu evaluation" onAction="#handleRetourMenuevaluhation" prefWidth="300" />
- 
+            <!-- TableView -->
+            <VBox spacing="10">
+                <Label text="Liste des testes " style="-fx-font-size: 18px;" />
+                <TableView fx:id="testTable" prefHeight="300" prefWidth="700">
+                    <columns>
+                        <TableColumn fx:id="idEvaluation" text="ID Evaluation" prefWidth="100" />
+                        <TableColumn fx:id="typeColumn" text="type" prefWidth="200" />
+                        <TableColumn fx:id="niveauDifficulteColumn" text="niveau difficulté" prefWidth="150" />
+                        <TableColumn fx:id="coursColumn" text="cours" prefWidth="150" />
+                    </columns>
+                </TableView>
+            </VBox>
+            <!-- Button below TableView -->
+            <HBox alignment="CENTER" spacing="10">
+                <Button text="Retour au menu principal" styleClass="hover-button" style="-fx-font-size: 16px;" prefWidth="150" 
+                        onAction="#handleRetourMenuevaluhation" />
+            </HBox>
         </VBox>
-
-        <!-- TableView pour afficher la liste des tests -->
-        <VBox alignment="TOP_CENTER" spacing="10" layoutX="50" layoutY="350"
-              prefHeight="300" prefWidth="500">
-            
-            <!-- Titre pour le tableau -->
-            <Label text="Liste des tests" style="-fx-font-size: 18px;" />
-
-            <TableView fx:id="testTable" prefHeight="300" prefWidth="500" visible="false">
-                <columns>
-                    <TableColumn fx:id="idEvaluation" text="ID Test" prefWidth="100" />
-                    <TableColumn fx:id="typeColumn" text="Type de Test" prefWidth="150" />
-                    <TableColumn fx:id="niveauDifficulteColumn" text="Niveau de Difficulté" prefWidth="125" />
-                    <TableColumn fx:id="coursColumn" text="Cours de Test" prefWidth="125" />
-                </columns>
-            </TableView>
-        </VBox>
-    </children>
-</AnchorPane>
+    </center>
+</BorderPane>

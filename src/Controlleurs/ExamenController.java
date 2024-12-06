@@ -181,7 +181,7 @@ private void afficherListeExamen(ActionEvent event) {
     @FXML
     private void handleRetourMenuevaluation(ActionEvent event) {
          try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vues/evaluation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vues/admin.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
@@ -240,6 +240,7 @@ private void modifierExamen(ActionEvent event) {
                 Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dateField.getText());
 
                 // Mettre à jour l'examen
+                examenSelectionne.setMatiereEvaluation((String) matiere);
                 examenSelectionne.setCoefficient((int) coefficient);
                 examenSelectionne.setDateEvaluation(date);
                 // Si vous avez un objet `matiere`, mettez à jour ici
@@ -267,5 +268,32 @@ private void modifierExamen(ActionEvent event) {
     });
 }
 
+ @FXML
+    private void aller_a_test (ActionEvent event) {
+         try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vues/test.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Menu Principal");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Pour déboguer en cas d'erreur
+        }
+         
+        }
+    @FXML
+     private void aller_a_certifiact (ActionEvent event) {
+         try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vues/cerificatgest.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Menu Principal");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Pour déboguer en cas d'erreur
+        }
+        }
     }
 

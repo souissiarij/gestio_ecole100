@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleurs.AjoutermatierecoursController">
+   <VBox  spacing="10" alignment="CENTER">
+    <Label text="Ajouter un Cours" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+    <HBox spacing="10">
+        <Label text="Type de Cours:" />
+        <ComboBox fx:id="typeCoursComboBox" />
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Titre du Cours:" />
+        <TextField fx:id="coursTitreField" />
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Nom Enseignant:" />
+        <TextField fx:id="enseignantNomField" />
+    </HBox>
+    <HBox fx:id="videoSection" spacing="10">
+        <Label text="URL Vidéo:" />
+        <TextField fx:id="urlVideoField" />
+        <Label text="Durée:" />
+        <TextField fx:id="dureeVideoField" />
+        <Label text="Taille:" />
+        <TextField fx:id="tailleVideoField" />
+    </HBox>
+    <HBox fx:id="documentSection" spacing="10">
+        <Label text="Format:" />
+        <TextField fx:id="formatDocumentField" />
+        <Label text="Pages:" />
+        <TextField fx:id="pagesDocumentField" />
+        <Label text="Taille:" />
+        <TextField fx:id="tailleDocumentField" />
+    </HBox>
+    <Button text="Ajouter" onAction="#ajouterCours" />
+</VBox>
+ 
+</AnchorPane>

@@ -16,15 +16,18 @@ import java.util.List;
 public class matiere {
     private static int compteurId = 0;  // Compteur pour générer les IDs
     private int idMatiere;              // ID unique pour chaque matière
-    private String titreMatiere;        // Titre de la matière
+    private String titreMatiere;
+  // Titre de la matière
     private List<cours> cours;          // Liste des cours pour cette matière
 
+   private Integer nbrecours ; 
     // Constructeur
     public matiere(String titreMatiere) {
         this.idMatiere = ++compteurId;       // ID auto-incrémenté
         this.titreMatiere = titreMatiere;
-       
+         
         this.cours = new ArrayList<>();
+        this.nbrecours = cours.size();
     }
    public matiere()
    {this.idMatiere = ++compteurId; 
@@ -40,6 +43,7 @@ public class matiere {
      *
      * @return
      */
+    public Integer getnbrecours(){return nbrecours;}
     public List<cours> getcours()
     {return cours;}
     public int getCoursSize()
@@ -97,6 +101,20 @@ public class matiere {
     public void setListeCours(ArrayList<cours> listeCours) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
+    public List<cours> getListeCours(){return cours;}
+  public void supprimercours( cours coursASupprimer)
+          {  if (cours != null && coursASupprimer != null) {
+        boolean removed = cours.remove(coursASupprimer);
+        if (removed) {
+            // Si le cours a été supprimé, mettre à jour le nombre de cours
+            nbrecours = cours.size();
+            System.out.println("Cours supprimé avec succès !");
+        } else {
+            System.out.println("Le cours à supprimer n'a pas été trouvé.");
+        }
+    } else {
+        System.out.println("Erreur : Cours invalide ou inexistant.");
+    }
+  }
    
 }

@@ -266,7 +266,34 @@ public void modifierTest(ActionEvent event) {
     
     public void handleRetourMenuevaluhation(ActionEvent event) {
          try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vues/evaluation.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vues/admin.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Menu Principal");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Pour déboguer en cas d'erreur
+        }
+        }
+    @FXML
+    private void aller_a_examen (ActionEvent event) {
+         try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vues/examen.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Menu Principal");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Pour déboguer en cas d'erreur
+        }
+         
+        }
+    @FXML
+     private void aller_a_certifiact (ActionEvent event) {
+         try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vues/cerificatgest.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));

@@ -69,7 +69,7 @@ public class AjouterMatiereController {
             return;
         }
 
-        Enseignant enseignant = new Enseignant("2","2","2","2","2");
+        Enseignant enseignant = new Enseignant("2",nomEnseignant,"2","2","2");
         cours cours;
 
         try {
@@ -92,6 +92,14 @@ public class AjouterMatiereController {
         } catch (NumberFormatException e) {
             System.err.println("Veuillez entrer des valeurs numériques valides pour les champs numériques !");
         }
+         coursTitreField.clear();
+    enseignantNomField.clear();
+    tailleVideoField.clear();
+    urlVideoField.clear();
+    dureeVideoField.clear();
+    formatDocumentField.clear();
+    pagesDocumentField.clear();
+    tailleDocumentField.clear();
     }
 
    @FXML

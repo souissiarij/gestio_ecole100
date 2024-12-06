@@ -110,6 +110,19 @@ public void ajouterteste(test teste)
     public void ajouterCertificat(certificat certificat) {
         this.listeCertificats.add(certificat);
     }
+       public void mettreAJourMatiere(matiere matiereToModify) {
+        // Chercher la matière dans la liste
+        for (int i = 0; i < listeMatieres.size(); i++) {
+            if (listeMatieres.get(i).getIdMatiere() == matiereToModify.getIdMatiere()) {
+                // Remplacer l'ancienne matière par la nouvelle (modifiée)
+                listeMatieres.set(i, matiereToModify);
+                System.out.println("Matière mise à jour : " + matiereToModify.getTitreMatiere());
+                return;
+            }
+        }
+        // Si la matière n'a pas été trouvée
+        System.out.println("Matière non trouvée pour mise à jour.");
+    }
 
      public void afficherProfsParMatiere(int idMatiere) {
         try {

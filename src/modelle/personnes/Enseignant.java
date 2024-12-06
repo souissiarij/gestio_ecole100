@@ -32,7 +32,7 @@ public class Enseignant extends Personne {
     public String getSpecialite() {
         return specialite;
     }
-
+    
     public void setSpecialite(String specialite) {
         this.specialite = specialite;
     }

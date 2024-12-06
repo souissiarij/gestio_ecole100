@@ -1,54 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.image.*?>
 
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controlleurs.MatieregestController"
+            style="-fx-background-color: white;"
+            stylesheets="@../style.css">
+    <!-- Sidebar -->
+    <left>
+        <StackPane style="-fx-background-color: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-padding: 20;"
+                   prefWidth="250" minWidth="200">
+            <!-- Contenu optionnel dans la partie bleue -->
+            <VBox alignment="CENTER" spacing="20">
+                <Label  style="-fx-text-fill: white; -fx-font-size: 24px;" />
+                <!-- Ajouter ici des boutons ou autre contenu -->
+               <ImageView fx:id="imageView" fitWidth="400" preserveRatio="true" style="-fx-alignment: center;" >
+                    <image>
+                        <Image url="@../images/logo.png"/>
+                    </image>
+                </ImageView><javafx.scene.image.ImageView/>  
+            </VBox>
+        </StackPane>
+    </left>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="800.0"
-            style="-fx-background-image: url('images/welcome.jpg'); 
-                   -fx-background-size: cover; 
-                   -fx-background-position: center;" 
-            xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="Controlleurs.MatieregestController">
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <!-- Header -->
+            <Text text="Menu de matière" style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-fill: #333;" />
 
-    <!-- Rectangle semi-transparent pour l'effet -->
-    <Pane prefHeight="400.0" prefWidth="600.0"
-          style="-fx-background-color: rgba(255, 255, 255, 0.6);">
-    </Pane>
+            <!-- Buttons -->
+            <HBox spacing="20" alignment="CENTER">
+                <Button text="Afficher matière" styleClass="hover-button" style="-fx-font-size: 16px;" prefWidth="150" onAction="#afficherMatiereParId" />
+                <Button text="Afficher liste" styleClass="hover-button" style="-fx-font-size: 16px;" prefWidth="150" onAction="#afficherListeMatieres" />
+                <Button text="Ajouter" styleClass="hover-button" style="-fx-font-size: 16px;" prefWidth="150" onAction="#ajouterMatiere" />
+                <Button text="Ajouter cours" styleClass="hover-button" style="-fx-font-size: 16px;" prefWidth="150" onAction="#ajouterCoursAMatiere"   />
+                <Button text="Supprimer cours " styleClass="hover-button" style="-fx-font-size: 16px;" prefWidth="150" onAction="#supprimerCoursAMatiere"  />
+                <Button text="Supprimer" styleClass="hover-button" style="-fx-font-size: 16px;" prefWidth="150" onAction="#supprimerMatiere" />
+            </HBox>
 
-    <!-- Conteneur des boutons -->
-    <VBox alignment="CENTER" spacing="15" layoutX="50" layoutY="30"
-          prefHeight="300" prefWidth="500">
-        <Label text="MENU MATIÈRE" 
-               style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: black;" 
-               alignment="CENTER"/>
+            <!-- TableView -->
+           <HBox alignment="CENTER">
+    <TableView fx:id="matiereTable" prefHeight="200" prefWidth="450" visible="true">
+        <columns>
+            <TableColumn fx:id="idMatiereColumn" text="ID matière" prefWidth="150" />
+            <TableColumn fx:id="titreMatiereColumn" text="Titre matière" prefWidth="150" />
+            <TableColumn fx:id="nbrecoursColumn" text="Nombre de cours" prefWidth="150" />
+        </columns>
+    </TableView>
+</HBox>
+            <!-- Button below TableView -->
+            <HBox alignment="CENTER" spacing="10">
+                <Button text="Retour au menu" styleClass="hover-button" style="-fx-font-size: 16px;" prefWidth="150" 
+                        onAction="#handleRetourMenuprinicipal"  />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
 
-        <!-- Boutons avec largeur fixe -->
-        <Button text="Ajouter une matière"   onAction="#ajouterMatiere" prefWidth="300"/>
-        <Button text="Supprimer une matière" onAction="#supprimerMatiere" prefWidth="300"/>
-        <Button text="Afficher une matiere" onAction="#afficherMatiereParId" prefWidth="300"/>
-        <Button text="Afficher la liste des matières" onAction="#afficherListeMatieres" prefWidth="300"/>
-       
-        
-        <!-- Bouton "Retour au menu principal" -->
-        <Button text="Retour au menu principal" onAction="#handleRetourMenuPrincipal" prefWidth="300"/>
-    </VBox>
-
-    <!-- TableView pour afficher la liste des matières -->
-    <VBox alignment="TOP_CENTER" spacing="10" layoutX="50" layoutY="350"
-          prefHeight="400" prefWidth="700">
-        
-        <!-- Titre pour le tableau -->
-        <Label text="Liste des matières" style="-fx-font-size: 18px;" />
-        
-        <!-- TableView -->
-        <TableView fx:id="matiereTable" VBox.vgrow="ALWAYS" prefHeight="350" prefWidth="700">
-            <columns>
-                <TableColumn fx:id="idMatiereColumn" text="ID" prefWidth="100"/>
-                <TableColumn fx:id="titreMatiereColumn" text="Titre" prefWidth="200"/>
-            </columns>
-        </TableView>
-    </VBox>
-
-</AnchorPane>
