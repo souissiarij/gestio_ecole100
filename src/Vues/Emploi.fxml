@@ -1,47 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="Controlleurs.EmploiDuTempsController"
-            style="-fx-background-image: url('images/welcome.jpg'); 
-                   -fx-background-size: cover; 
-                   -fx-background-position: center;">
 
-    <!-- Contenu principal -->
-    <VBox alignment="CENTER" spacing="20" 
-          prefWidth="600" prefHeight="400"
-          style="-fx-background-color: rgba(255, 255, 255, 0.6); 
-                 -fx-padding: 20;"
-          AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="100.0" 
-          AnchorPane.rightAnchor="100.0">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" style="-fx-background-color: white;" fx:controller="Controlleurs.EmploiDuTempsController">
+    <!-- Sidebar: 30% width with blue background and title -->
+  
+<left>
+    <VBox spacing="20" style="-fx-background-color: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-padding: 20;">
+
+        <!-- Espacement flexible entre les boutons -->
+        <Region style="-fx-min-height: 70; -fx-max-height: Infinity;" />
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" text="Gestion des Emplois" />
         
-        <!-- Titre -->
-        <Text text="Ajouter un Emploi du Temps" 
-              style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <Region style="-fx-min-height: 90; -fx-max-height: Infinity;" />
 
-        <!-- Formulaire d'ajout -->
-        <TextField fx:id="idField" promptText="ID de l'Emploi du Temps" style="-fx-pref-width: 200;"/>
-        <TextField fx:id="niveauScolaireField" promptText="Niveau Scolaire" style="-fx-pref-width: 200;"/>
-        <TextField fx:id="jourField" promptText="Jour" style="-fx-pref-width: 200;"/>
-        <TextField fx:id="heureDebutField" promptText="Heure de début" style="-fx-pref-width: 200;"/>
-        <TextField fx:id="heureFinField" promptText="Heure de fin" style="-fx-pref-width: 200;"/>
-        <TextField fx:id="matiereField" promptText="Matière" style="-fx-pref-width: 200;"/>
-        <TextField fx:id="enseignantField" promptText="Enseignant" style="-fx-pref-width: 200;"/>
+        <Button onAction="#ajouterEmploi"   prefWidth="300" style="-fx-background-color: #E5E1DA; -fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" text="Ajouter Emploi" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
-        <!-- Boutons -->
-        <Button text="Ajouter" onAction="#ajouterEmploi" style="-fx-pref-width: 300;"/>
-        <Button text="Afficher" onAction="#afficherEmploi" style="-fx-pref-width: 300;"/>
-        <Button text="Masquer" onAction="#masquerEmploi" style="-fx-pref-width: 300;"/>
-        <Button text="Retour au menu principal " onAction="#handleRetourMenuPrincipal" style="-fx-pref-width: 300;"/>
+        <Button onAction="#afficherEmploi"   prefWidth="300" style="-fx-background-color: #E5E1DA; -fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" text="Afficher Emploi" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Button onAction="#masquerEmploi"   prefWidth="300" style="-fx-background-color: #E5E1DA; -fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" text="Masquer" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
-        <!-- TableView -->
-        <TableView fx:id="tableView" visible="false" style="-fx-pref-width: 600;">
+        <Button onAction="#handleRetourMenuPrincipal"   prefWidth="300" style="-fx-background-color: #E5E1DA; -fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" text="Retour au menu principal" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    </VBox>
+</left>
+
+
+
+
+    <!-- Main content: 70% width with initial logo -->
+     
+            <center>
+                        <VBox spacing="20" style="-fx-padding: 20;">
+
+ <GridPane hgap="10" vgap="10" style="-fx-border-color: #ddd; -fx-border-radius: 10px; -fx-padding: 20;" alignment="CENTER_LEFT">
+    <Label text="L'ajout des Emplois" style="-fx-font-size: 18px; -fx-font-weight: bold ; -fx-text-fill: #4ca1af ;" GridPane.columnSpan="2"/>
+
+    <Label text="ID"  style="-fx-font-weight: bold; -fx-text-fill: #4ca1af;" GridPane.rowIndex="1"/>
+    <TextField fx:id="idField" promptText="ID de l'Emploi du Temps" style="-fx-pref-width: 200;" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="Niveau" style="-fx-font-weight: bold; -fx-text-fill: #4ca1af;"  GridPane.rowIndex="2"/>
+    <TextField fx:id="niveauScolaireField" promptText="Niveau Scolaire" style="-fx-pref-width: 200;" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Label text="Jour" style="-fx-font-weight: bold; -fx-text-fill: #4ca1af;" GridPane.rowIndex="3"/>
+    <TextField fx:id="jourField" promptText="Jour" style="-fx-pref-width: 200;" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Label text="Début" style="-fx-font-weight: bold; -fx-text-fill: #4ca1af;"  GridPane.rowIndex="4"/>
+    <TextField fx:id="heureDebutField" promptText="Heure de début" style="-fx-pref-width: 200;" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Label text="Fin" style="-fx-font-weight: bold; -fx-text-fill: #4ca1af;"  GridPane.rowIndex="5"/>
+    <TextField fx:id="heureFinField" promptText="Heure de fin" style="-fx-pref-width: 200;" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <Label text="Matière" style="-fx-font-weight: bold; -fx-text-fill: #4ca1af;"  GridPane.rowIndex="6"/>
+    <TextField fx:id="matiereField" promptText="Matière" style="-fx-pref-width: 200;" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+    <Label text="Enseignant" style="-fx-font-weight: bold; -fx-text-fill: #4ca1af;"  GridPane.rowIndex="7"/>
+    <TextField fx:id="enseignantField" promptText="Enseignant" style="-fx-pref-width: 200;" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+</GridPane>
+
+
+                  <!-- Section des tableaux -->
+    <TableView fx:id="tableView" visible="false" style="-fx-pref-width: 600;">
             <columns>
                 <TableColumn text="ID" fx:id="idColumn"/>
                 <TableColumn text="Niveau Scolaire" fx:id="niveauScolaireColumn"/>
@@ -52,5 +71,17 @@
                 <TableColumn text="Enseignant" fx:id="enseignantColumn"/>
             </columns>
         </TableView>
-    </VBox>
-</AnchorPane>
+    
+                </VBox>
+
+            </center>  
+        
+      
+
+        
+        
+   
+
+
+    
+</BorderPane>

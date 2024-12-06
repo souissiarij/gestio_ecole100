@@ -37,7 +37,7 @@ public class AdminController {
         stage.show();
     } catch (IOException e) {
         e.printStackTrace();
-        afficherMessage("Erreur : Impossible de charger l'interface Matieregest.");
+        afficherMessage("Erreur : Impossible de charger l'interface etudiant.");
     }
 }
 
@@ -57,7 +57,8 @@ public class AdminController {
         stage.show();
     } catch (IOException e) {
         e.printStackTrace();
-        afficherMessage("Erreur : Impossible de charger l'interface Matieregest.");
+        afficherMessage("Erreur : Impossible de charger l'interface enseignant"
+                + ".");
     }    }
 
    @FXML

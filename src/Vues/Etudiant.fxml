@@ -1,77 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="Controlleurs.EtudiantController"
-      spacing="20"
-      style="-fx-padding: 20; -fx-background-color: #f4f6f9; -fx-border-color: #d1d5db; -fx-border-width: 2; -fx-border-radius: 15; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 5, 0.5, 3, 3);">
-    
-    <!-- Titre principal -->
-    <Text text="Gestion des Étudiants" style="
-            -fx-font-size: 28px; 
-            -fx-font-weight: bold; 
-            -fx-fill: linear-gradient(to right, #2c3e50, #34495e); 
-            -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.5, 3, 3);"/>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-    <!-- Boutons d'actions -->
-    <HBox spacing="15" alignment="center" style="-fx-padding: 10;">
-        <Button text="Associer Étudiant à la Cantine" onAction="#associerEtudiantCantine"
-                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-border-radius: 10; -fx-background-radius: 10; 
-                       -fx-hover-background-color: #2980b9; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 2, 2);"/>
-        <Button text="Afficher Cantine" onAction="#afficherListecantine"
-                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-border-radius: 10; -fx-background-radius: 10; 
-                       -fx-hover-background-color: #27ae60; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 2, 2);"/>
-        <Button text="Associer Étudiant à la Bibliothèque" onAction="#associerEtudiantbibliotheque"
-                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-border-radius: 10; -fx-background-radius: 10; 
-                       -fx-hover-background-color: #2980b9; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 2, 2);"/>
-        <Button text="Afficher Bibliothèque" onAction="#afficherListebibliotheque"
-                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-border-radius: 10; -fx-background-radius: 10; 
-                       -fx-hover-background-color: #27ae60; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 2, 2);"/>
-    </HBox>
+<BorderPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleurs.EtudiantController">
+    <!-- Sidebar -->
+ <!-- Sidebar -->
+<left>
+    <VBox spacing="20" style="-fx-background-color: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-padding: 20;">
 
-    <!-- Section des tableaux -->
-    <VBox spacing="20">
-        <!-- Tableau Cantine -->
-        <Label text="Liste des Étudiants - Cantine" style="
-                -fx-font-size: 20px; 
-                -fx-font-weight: bold; 
-                -fx-text-fill: #2c3e50; 
-                -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0.5, 2, 2);"/>
-        <TableView fx:id="cantineTable" style="-fx-background-color: #ffffff; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0.5, 2, 2);"
-                   prefHeight="250" prefWidth="600">
-            <columns>
-                <TableColumn fx:id="idColumn" text="ID Étudiant" prefWidth="100" />
-                <TableColumn fx:id="nomColumn" text="Nom" prefWidth="150" />
-                <TableColumn fx:id="prenomColumn" text="Prénom" prefWidth="150" />
-                <TableColumn fx:id="emailColumn" text="Email" prefWidth="200" />
-                <TableColumn fx:id="niveauColumn" text="Niveau Études" prefWidth="150" />
-                <TableColumn fx:id="platColumn" text="Plat" prefWidth="150" />
-            </columns>
-        </TableView>
+        <!-- Espacement flexible entre les boutons -->
+        <Region style="-fx-min-height: 70; -fx-max-height: Infinity;" />
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" text="Gestion des Enseignants" />
+        
+        <Region style="-fx-min-height: 90; -fx-max-height: Infinity;" />
 
-        <!-- Tableau Bibliothèque -->
-        <Label text="Liste des Étudiants - Bibliothèque" style="
-                -fx-font-size: 20px; 
-                -fx-font-weight: bold; 
-                -fx-text-fill: #2c3e50; 
-                -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 4, 0.5, 2, 2);"/>
-        <TableView fx:id="bibTable" style="-fx-background-color: #ffffff; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0.5, 2, 2);"
-                   prefHeight="250" prefWidth="600">
-            <columns>
-                <TableColumn fx:id="idbColumn" text="ID Bibliothèque" prefWidth="150" />
-                <TableColumn fx:id="ideColumn" text="ID Étudiant" prefWidth="150" />
-                <TableColumn fx:id="livresDisponiblesColumn" text="Livres Disponibles" prefWidth="200" />
-                <TableColumn fx:id="empruntsColumn" text="Emprunts" prefWidth="150" />
-            </columns>
-        </TableView>
+        <Button onAction="#afficherCantine"   prefWidth="300" style="-fx-background-color: #E5E1DA; -fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" text="Afficher la liste de cantine " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+        <Button onAction="#afficherBib"   prefWidth="300" style="-fx-background-color: #E5E1DA; -fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" text="Afficher la liste de biblio" GridPane.columnIndex="0" GridPane.rowIndex="1" />
     </VBox>
+</left>
 
-    <!-- Bouton Retour -->
-    <HBox alignment="center" spacing="10">
-        <Button text="Retour" onAction="#retourr"
-                style="-fx-pref-width: 200; -fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 10; -fx-background-radius: 10; 
-                       -fx-hover-background-color: #c0392b; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 2, 2);"/>
-    </HBox>
-</VBox>
+
+
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <!-- Header -->
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <Button onAction="#retourr" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" text="Retour" />
+            </HBox>
+
+            <!-- Formulaire Enseignant -->
+            <VBox spacing="15" style="-fx-border-color: #ddd; -fx-border-radius: 10px; -fx-padding: 20;">
+                <Label style="-fx-font-size: 18px; -fx-font-weight: bold ; -fx-text-fill: #4ca1af ;" text="L'ajout d'une cantine" />
+              
+                <HBox spacing="10">
+                    <Label style="-fx-text-fill: #4ca1af;" text="ID Etudiant:" />
+                    <TextField fx:id="txtId" promptText="ID" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="Nom Etudiant:" />
+                    <TextField fx:id="txtNom" promptText="Nom" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="Prénom Etudiant:" />
+                    <TextField fx:id="txtPrenom" promptText="Prénom" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="Email Etudiant:" />
+                    <TextField fx:id="txtEmail" promptText="Email" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="Niveau Etudiant" />
+                    <TextField fx:id="txtNiveau" promptText="Niveau Etudiant" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="Plat Select" />
+                    <TextField fx:id="txtPlat" promptText="Plat Selectionné" />
+                    <Button fx:id="btnAjouterCant" style="-fx-background-color: #E5E1DA; -fx-text-fill: #4ca1af; -fx-border-radius: 8px;" text="Ajouter" onAction="#ajouterCantine"  />
+                </HBox>
+            </VBox>
+
+            <!-- TableView Enseignants -->
+            <TableView fx:id="tableViewCantine" prefHeight="300" prefWidth="800" visible="false">
+                <columns>
+                    <TableColumn fx:id="colId" prefWidth="100" style="-fx-text-fill: #4ca1af;" text="ID Etudiant:" />
+                    <TableColumn fx:id="colNom" prefWidth="150" style="-fx-text-fill: #4ca1af;" text="Nom Etudiant:" />
+                    <TableColumn fx:id="colPrenom" prefWidth="150" style="-fx-text-fill: #4ca1af;" text="Prénom Etudiant:" />
+                    <TableColumn fx:id="colEmail" prefWidth="200" style="-fx-text-fill: #4ca1af;" text="Email Etudiant:" />
+                    <TableColumn fx:id="colNiv" prefWidth="150" style="-fx-text-fill: #4ca1af;" text="Niveau Etudiant" />
+                    <TableColumn fx:id="colPlat" prefWidth="150" style="-fx-text-fill: #4ca1af;" text="Plat Sélectionné" />
+                </columns>
+            </TableView>
+
+            <!-- Section Planification des Cours -->
+            <VBox spacing="15" style="-fx-border-color: #ddd; -fx-border-radius: 10px; -fx-padding: 20;">
+                <Label style="-fx-font-size: 18px; -fx-font-weight: bold;  -fx-text-fill: #4ca1af ;" text="Ajout d'une biblio" />
+                <HBox spacing="10">
+                    <Label style="-fx-text-fill: #4ca1af;" text="ID Biblio" />
+                    <TextField fx:id="txtIDBiblio" promptText="ID Bibliothèque" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="ID Etudiant" />
+                    <TextField fx:id="txtIDEtud" promptText="ID Etudiant" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="Livres Disponnibles" />
+                    <TextField fx:id="txtLivDispo" promptText="Livres Disponnibles" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="Livres Empruntés" />
+                    <TextField fx:id="txtLivEmpru" promptText="Livres Empruntés" />
+                    <Button fx:id="btnAjouterBiblio" onAction="#ajouterBib"   style="-fx-background-color: #E5E1DA; -fx-text-fill: #4ca1af; -fx-border-radius: 8px;" text="Ajouter" />
+                </HBox>
+
+                <!-- TableView Cours -->
+               
+            </VBox>
+             <TableView fx:id="tableViewBib" prefHeight="300" prefWidth="800" visible="false">
+                    <columns>
+                        <TableColumn fx:id="colIdBib" prefWidth="100" style="-fx-text-fill: #4ca1af;" text="ID Biblio" />
+                        <TableColumn fx:id="colIDEtud" prefWidth="300" style="-fx-text-fill: #4ca1af;" text="ID Etudiant" />
+                        <TableColumn fx:id="colLivreDispo" prefWidth="400" style="-fx-text-fill: #4ca1af;" text="Livres Disponnibles" />
+                        <TableColumn fx:id="colLivreEmpr" prefWidth="400" style="-fx-text-fill: #4ca1af;" text="Livres Empruntés" />
+
+                    </columns>
+             </TableView>
+        </VBox>
+    </center>
+</BorderPane>

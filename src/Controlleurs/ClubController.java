@@ -67,13 +67,7 @@ public void initialize() {
                 return newClub;
             });
 
-        // Ajouter le membre au club
-        try {
-            club.ajouterMembre(new Membre(nomMembre, prenomMembre));
-            outputArea.setText("Membre ajouté avec succès au club " + club.getNom() + " !");
-        } catch (ClubException e) {
-            outputArea.setText("Erreur : " + e.getMessage());
-        }
+        
 
         // Effacer les champs
         nomField.clear();
@@ -116,10 +110,12 @@ public void afficherNomClub() {
             .orElse(null);
 
     if (club != null) {
-        outputArea.setText("Le club sélectionné est : " + club.getNom());
+        outputArea.setText(" Le Membre a été ajouté au  club sélectionné qui est : " + club.getNom());
     } else {
         outputArea.setText("Aucun club de ce type n'existe !");
     }
+    
+    
 }
 @FXML
 private TextField nomClubField; // Nouveau champ pour le nom du club
@@ -145,10 +141,10 @@ public void ajouterClub() {
     Club nouveauClub = new Club(nomClub, typeClub);
     clubs.add(nouveauClub);
 
-    outputArea.setText("Club '" + nomClub + "' de type '" + typeClub + "' ajouté avec succès !");
     
     // Effacer le champ
     nomClubField.clear();
+    
 }
 @FXML
     private void handleRetourMenuPrincipal(ActionEvent event) {

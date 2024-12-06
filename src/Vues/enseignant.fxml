@@ -1,72 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
+
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleurs.EnseignantController" style="-fx-background-color: linear-gradient(to bottom, #c2e9fb, #a1c4fd); -fx-padding: 20px;">
-    <VBox spacing="20" layoutX="20" layoutY="20" style="-fx-background-color: #ffffff; -fx-background-radius: 10px; -fx-padding: 20px; -fx-border-color: #ddd; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <!-- Formulaire pour ajouter un enseignant -->
-        <HBox spacing="15" style="-fx-background-color: #f4f4f9; -fx-padding: 15px; -fx-border-color: #ccc; -fx-border-radius: 8px; -fx-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);">
-            <Label text="ID:" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #333; -fx-margin-right: 5px;" />
-            <TextField fx:id="txtId" promptText="ID" prefWidth="100" style="-fx-background-color: #ffffff; -fx-border-color: #ccc; -fx-border-radius: 5px; -fx-font-size: 14px; -fx-padding: 5px; -fx-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);" />
-            <Label text="Nom:" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #333; -fx-margin-right: 5px;" />
-            <TextField fx:id="txtNom" promptText="Nom" prefWidth="150" style="-fx-background-color: #ffffff; -fx-border-color: #ccc; -fx-border-radius: 5px; -fx-font-size: 14px; -fx-padding: 5px; -fx-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);" />
-            <Label text="Prénom:" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #333; -fx-margin-right: 5px;" />
-            <TextField fx:id="txtPrenom" promptText="Prénom" prefWidth="150" style="-fx-background-color: #ffffff; -fx-border-color: #ccc; -fx-border-radius: 5px; -fx-font-size: 14px; -fx-padding: 5px; -fx-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);" />
-            <Label text="Email:" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #333; -fx-margin-right: 5px;" />
-            <TextField fx:id="txtEmail" promptText="Email" prefWidth="200" style="-fx-background-color: #ffffff; -fx-border-color: #ccc; -fx-border-radius: 5px; -fx-font-size: 14px; -fx-padding: 5px; -fx-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);" />
-            <Label text="Spécialité:" style="-fx-font-weight: bold; -fx-font-size: 14px; -fx-text-fill: #333; -fx-margin-right: 5px;" />
-            <TextField fx:id="txtSpecialite" promptText="Spécialité" prefWidth="150" style="-fx-background-color: #ffffff; -fx-border-color: #ccc; -fx-border-radius: 5px; -fx-font-size: 14px; -fx-padding: 5px; -fx-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);" />
-            <Button text="Ajouter" fx:id="btnAjouter" style="-fx-background-color: #28a745; -fx-text-fill: #ffffff; -fx-border-radius: 5px; -fx-padding: 10px 15px; -fx-font-size: 14px; -fx-cursor: hand; -fx-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);" />
-        </HBox>
+<BorderPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlleurs.EnseignantController">
+    <!-- Sidebar -->
+ <!-- Sidebar -->
+<left>
+    <VBox spacing="20" style="-fx-background-color: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-padding: 20;">
 
-        <!-- Bouton pour afficher la TableView -->
-        <Button fx:id="btnAfficher" text="Afficher la Liste" onAction="#afficherTable" prefWidth="200" style="-fx-background-color: #007BFF; -fx-text-fill: #ffffff; -fx-border-radius: 5px; -fx-padding: 10px 15px; -fx-font-size: 14px; -fx-cursor: hand; -fx-margin-top: 10px; -fx-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);" />
-
-        <!-- TableView pour afficher les enseignants -->
-        <TableView fx:id="tableViewEnseignants" prefWidth="800" prefHeight="300" visible="false" style="-fx-border-color: #ddd; -fx-border-radius: 5px; -fx-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <columns>
-                <TableColumn fx:id="colId" text="ID" prefWidth="100" style="-fx-font-weight: bold;" />
-                <TableColumn fx:id="colNom" text="Nom" prefWidth="150" style="-fx-font-weight: bold;" />
-                <TableColumn fx:id="colPrenom" text="Prénom" prefWidth="150" style="-fx-font-weight: bold;" />
-                <TableColumn fx:id="colEmail" text="Email" prefWidth="200" style="-fx-font-weight: bold;" />
-                <TableColumn fx:id="colSpecialite" text="Spécialité" prefWidth="150" style="-fx-font-weight: bold;" />
-            </columns>
-        </TableView>
+        <!-- Espacement flexible entre les boutons -->
+        <Region style="-fx-min-height: 70; -fx-max-height: Infinity;" />
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" text="Gestion des Enseignants" />
         
-        <!-- Section de planification des cours -->
-        <VBox  spacing="15" style="-fx-background-color: #f4f4f9; -fx-padding: 15px; -fx-border-color: #ccc; -fx-border-radius: 8px; -fx-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);">
-            <Label text="Planification des cours" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333; -fx-margin-bottom: 10px;" />
+        <Region style="-fx-min-height: 90; -fx-max-height: Infinity;" />
 
-            <HBox spacing="10">
-                <Label text="Titre du matiere" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" />
-                <TextField fx:id="txtTitreCours" promptText="Titre" prefWidth="150" style="-fx-background-color: #ffffff; -fx-border-color: #ccc; -fx-border-radius: 5px; -fx-font-size: 14px; -fx-padding: 5px; -fx-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);" />
-                <Label text="Enseignant:" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333;" />
-                <TextField fx:id="txtEnseignant" promptText="Nom Enseignant" prefWidth="200" style="-fx-background-color: #ffffff; -fx-border-color: #ccc; -fx-border-radius: 5px; -fx-font-size: 14px; -fx-padding: 5px; -fx-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);" />
-                <Button text="Ajouter matiere" fx:id="btnAjouterCours" onAction="#ajouterCours" style="-fx-background-color: #007BFF; -fx-text-fill: #ffffff; -fx-border-radius: 5px; -fx-padding: 10px 15px; -fx-font-size: 14px; -fx-cursor: hand; -fx-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);" />
+        <Button onAction="#afficherTable" prefWidth="300" style="-fx-background-color: #E5E1DA; -fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" text="Afficher la liste des enseignants " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+        <Button onAction="#afficherCours" prefWidth="300" style="-fx-background-color: #E5E1DA; -fx-text-fill: linear-gradient(to bottom, #4ca1af, #2c3e50); -fx-font-size: 20px; -fx-border-color: #4ca1af; -fx-border-width: 1px; -fx-border-radius: 8px;" text="Afficher la liste des Matières" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    </VBox>
+</left>
+
+
+
+    <!-- Main Content -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <!-- Header -->
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <Button onAction="#retourr" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 5;" text="Retour" />
             </HBox>
-            
-            <!-- Bouton pour afficher la TableView des cours -->
-            <Button fx:id="btnAfficherCours" text="Afficher le matieres" onAction="#afficherCours" prefWidth="200" style="-fx-background-color: #28a745; -fx-text-fill: #ffffff; -fx-border-radius: 5px; -fx-padding: 10px 15px; -fx-font-size: 14px; -fx-cursor: hand; -fx-margin-top: 10px; -fx-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);" />
-            
-                    <Button text="Retour" onAction="#retourr"
-                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10; -fx-border-radius: 5; -fx-background-radius: 5;" />
-            <!-- TableView pour afficher les cours (masquée au départ) -->
-            <TableView fx:id="tableViewCours" prefWidth="800" prefHeight="300" visible="false" style="-fx-border-color: #ddd; -fx-border-radius: 5px; -fx-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+
+            <!-- Formulaire Enseignant -->
+            <VBox spacing="15" style="-fx-border-color: #ddd; -fx-border-radius: 10px; -fx-padding: 20;">
+                <Label style="-fx-font-size: 18px; -fx-font-weight: bold ; -fx-text-fill: #4ca1af ;" text="L'ajout des enseignants" />
+              
+                <HBox spacing="10">
+                    <Label style="-fx-text-fill: #4ca1af;" text="ID:" />
+                    <TextField fx:id="txtId" promptText="ID" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="Nom:" />
+                    <TextField fx:id="txtNom" promptText="Nom" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="Prénom:" />
+                    <TextField fx:id="txtPrenom" promptText="Prénom" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="Email:" />
+                    <TextField fx:id="txtEmail" promptText="Email" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="Spécialité:" />
+                    <TextField fx:id="txtSpecialite" promptText="Spécialité" />
+                    <Button fx:id="btnAjouter" style="-fx-background-color: #E5E1DA; -fx-text-fill: #4ca1af; -fx-border-radius: 8px;" text="Ajouter" />
+                </HBox>
+            </VBox>
+
+            <!-- TableView Enseignants -->
+            <TableView fx:id="tableViewEnseignants" prefHeight="300" prefWidth="800" visible="false">
                 <columns>
-                    <TableColumn fx:id="colIdCours" text="ID Cours" prefWidth="100" style="-fx-font-weight: bold;" />
-                    <TableColumn fx:id="colTitreCours" text="Titre du cours" prefWidth="300" style="-fx-font-weight: bold;" />
-                    <TableColumn fx:id="colEnseignant" text="Enseignant" prefWidth="400" style="-fx-font-weight: bold;" />
+                    <TableColumn fx:id="colId" prefWidth="100" style="-fx-text-fill: #4ca1af;" text="ID" />
+                    <TableColumn fx:id="colNom" prefWidth="150" style="-fx-text-fill: #4ca1af;" text="Nom" />
+                    <TableColumn fx:id="colPrenom" prefWidth="150" style="-fx-text-fill: #4ca1af;" text="Prénom" />
+                    <TableColumn fx:id="colEmail" prefWidth="200" style="-fx-text-fill: #4ca1af;" text="Email" />
+                    <TableColumn fx:id="colSpecialite" prefWidth="150" style="-fx-text-fill: #4ca1af;" text="Spécialité" />
                 </columns>
             </TableView>
-            
-                
+
+            <!-- Section Planification des Cours -->
+            <VBox spacing="15" style="-fx-border-color: #ddd; -fx-border-radius: 10px; -fx-padding: 20;">
+                <Label style="-fx-font-size: 18px; -fx-font-weight: bold;  -fx-text-fill: #4ca1af ;" text="Planification des cours" />
+                <HBox spacing="10">
+                    <Label style="-fx-text-fill: #4ca1af;" text="Titre du cours:" />
+                    <TextField fx:id="txtTitreCours" promptText="Titre" />
+                    <Label style="-fx-text-fill: #4ca1af;" text="Enseignant:" />
+                    <TextField fx:id="txtEnseignant" promptText="Nom Enseignant" />
+                    <Button fx:id="btnAjouterCours" onAction="#ajouterCours" style="-fx-background-color: #E5E1DA; -fx-text-fill: #4ca1af; -fx-border-radius: 8px;" text="Ajouter" />
+                </HBox>
+
+                <!-- TableView Cours -->
+               
+            </VBox>
+             <TableView fx:id="tableViewCours" prefHeight="300" prefWidth="800" visible="false">
+                    <columns>
+                        <TableColumn fx:id="colIdCours" prefWidth="100" style="-fx-text-fill: #4ca1af;" text="ID Cours" />
+                        <TableColumn fx:id="colTitreCours" prefWidth="300" style="-fx-text-fill: #4ca1af;" text="Titre du cours" />
+                        <TableColumn fx:id="colEnseignant" prefWidth="400" style="-fx-text-fill: #4ca1af;" text="Enseignant" />
+                    </columns>
+                </TableView>
         </VBox>
-    </VBox>
-</AnchorPane>
+    </center>
+</BorderPane>

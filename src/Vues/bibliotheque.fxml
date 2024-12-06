@@ -22,7 +22,7 @@
     <!-- Boutons d'action -->
     <HBox spacing="20" alignment="center">
         <Button text="Enregistrer" onAction="#enregistreretudiant"
-                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10; -fx-border-radius: 5; -fx-background-radius: 5;" />
+                style="-fx-text-fill: #4ca1af;" />
 
     </HBox>
 </VBox>  
