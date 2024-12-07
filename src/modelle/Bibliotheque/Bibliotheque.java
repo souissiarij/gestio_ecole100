@@ -81,5 +81,22 @@ public class Bibliotheque {
             livresDisponibles.add(livre);
         }
     }
+
+    public void setIdb(String idb) {
+        this.idb = idb;
+    }
+
+    public void setLivresDisponibles(ArrayList<String> livresDisponibles) {
+        this.livresDisponibles = livresDisponibles;
+    }
+
+    public void setIdE(String idE) {
+        this.idE = idE;
+    }
+
+    public void setEmprunts(ArrayList<String> emprunts) {
+        this.emprunts = emprunts;
+    }
+    
     
 }

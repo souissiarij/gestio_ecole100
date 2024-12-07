@@ -1,44 +1,4 @@
-/*package Controlleurs;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import java.io.IOException;
-
-public class EmploiDuTempsController {
-
-    @FXML
-    public void ajouterEmploi(ActionEvent event) {
-        try {
-            // Charger la vue pour ajouter un emploi du temps
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vues/AjouterEmploi.fxml"));
-            Parent ajouterEmploiView = loader.load();
-            
-            // Obtenir la scène actuelle
-            Scene currentScene = ((Node) event.getSource()).getScene();
-            Stage stage = (Stage) currentScene.getWindow();
-            
-            // Mettre à jour la scène avec la nouvelle vue
-            stage.setScene(new Scene(ajouterEmploiView));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            afficherMessage("Erreur : Impossible de charger l'ajout de l'emploi du temps.");
-        }
-    }
-
-   
-
-    private void afficherMessage(String message) {
-        System.out.println(message); // Afficher un message dans la console pour le debug
-    }
-}
-*/
 package Controlleurs;
 
 import java.io.IOException;

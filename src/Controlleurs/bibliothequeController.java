@@ -72,6 +72,11 @@ public void enregistreretudiant() {
     } else {
         System.out.println("Administrateur principal non initialisé.");
     }
+    idbField.clear();
+        idEField.clear();   
+    livresDisponiblesField.clear();   
+    empruntsField.clear();   
+
 }
 
     public void retour(ActionEvent event) {
